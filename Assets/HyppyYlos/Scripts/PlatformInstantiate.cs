@@ -40,5 +40,9 @@ public class PlatformInstantiate : MonoBehaviour
             juuriSpawnattuLaskuri = 0;
 
         }
+        if (transform.position.y > 15)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

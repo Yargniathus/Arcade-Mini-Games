@@ -13,6 +13,6 @@ public class PlatformRising: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.GetComponent<Transform>().Translate(0f, Time.deltaTime * 0.3f + (TimeCounter.Timer*0.001f), 0f);
+        this.GetComponent<Transform>().Translate(0f, Time.deltaTime * 0.2f + (TimeCounter.Timer*0.0001f), 0f);
     }
 }
