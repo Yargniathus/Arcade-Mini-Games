@@ -17,7 +17,7 @@ public class PlatformInstantiate : MonoBehaviour
     void Update()
     {
         juuriSpawnattuLaskuri += Time.deltaTime;
-        if ((transform.position.y > -0.05 && transform.position.y < 0.05) && juuriSpawnattuLaskuri > 0.3)
+        if ((transform.position.y > -0.45 && transform.position.y < -0.35) && juuriSpawnattuLaskuri > 0.3)
         {
             
             //
@@ -26,14 +26,14 @@ public class PlatformInstantiate : MonoBehaviour
             if (PlatformBoolValue.LastChosenLeftPlatform == true)
             {
                 PlatformBoolValue.LastChosenLeftPlatform = false;
-                Instantiate(Platform, new Vector3(3.07f, -4.0f, 0), Quaternion.identity);
+                Instantiate(Platform, new Vector3(3.07f, -4.5f, 0), Quaternion.identity);
 
 
             }
              else
             {
                 PlatformBoolValue.LastChosenLeftPlatform = true;
-                Instantiate(Platform, new Vector3(-3.92f, -4.0f, 0), Quaternion.identity);
+                Instantiate(Platform, new Vector3(-3.92f, -4.5f, 0), Quaternion.identity);
                 
             }
 
