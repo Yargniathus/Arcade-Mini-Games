@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HyppyYlosMain.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/HyppyYlosEnd.unity
+    guid: 8168c86a3ac246546a6e54ff00f684c4
   m_configObjects: {}

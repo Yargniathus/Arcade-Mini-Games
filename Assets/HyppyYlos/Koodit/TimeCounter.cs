@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class TimeCounter : MonoBehaviour
 {
     // Start is called before the first frame update
+    //Test commit for git purposes
 
     public static float Timer = 0f;
     public float TimeToGUI = 0f;

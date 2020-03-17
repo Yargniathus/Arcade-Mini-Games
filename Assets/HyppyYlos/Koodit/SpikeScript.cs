@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SpikeScript : MonoBehaviour
 {
@@ -15,7 +16,9 @@ public class SpikeScript : MonoBehaviour
 
         if (col.gameObject.tag == "Player")
         {
-            Debug.Log("Piikki.");
+            PlayerPrefs.SetFloat("points", TimeCounter.Timer);
+
+            SceneManager.LoadScene("HyppyYlosEnd");
         }
     }
     // Update is called once per frame

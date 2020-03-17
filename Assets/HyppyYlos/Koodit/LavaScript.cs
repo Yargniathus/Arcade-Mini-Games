@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LavaScript : MonoBehaviour
 {
@@ -16,7 +17,9 @@ public class LavaScript : MonoBehaviour
        
         if (col.gameObject.tag == "Player")
         {
-            Debug.Log("Laava.");
+           PlayerPrefs.SetFloat("points", TimeCounter.Timer);
+
+           SceneManager.LoadScene("HyppyYlosEnd");
         }
     }
     // Update is called once per frame
