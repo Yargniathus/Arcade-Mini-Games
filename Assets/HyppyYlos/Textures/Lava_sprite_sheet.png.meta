@@ -1,43 +1,34 @@
 fileFormatVersion: 2
-guid: aaab6e25920f6c243b10e5914724c378
+guid: dbf6bbb222166ed48881ca9f6d33f0fc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8925926480780585703
-    second: Main_Character_walk_right_1
+      213: -1973459433220965120
+    second: Lava_sprite_sheet_0
   - first:
-      213: -1653986929937903737
-    second: Main_Character_walk_right_2
+      213: -2755632908707107686
+    second: Lava_sprite_sheet_1
   - first:
-      213: 3193806666413760892
-    second: Main_Character_fall_right
+      213: 6673902411630696833
+    second: Lava_sprite_sheet_2
   - first:
-      213: 5686076336489175067
-    second: Main_Character_die_right
+      213: -8378892079707908406
+    second: Lava_sprite_sheet_3
   - first:
-      213: -7440961253436171838
-    second: Main_Character_jump_right
+      213: -4941500345719117811
+    second: Lava_sprite_sheet_4
   - first:
-      213: -7767278614143834757
-    second: Main_Character_idle_right
+      213: 6330854807984567652
+    second: Lava_sprite_sheet_5
   - first:
-      213: 3069632307084141846
-    second: Main_Character_walk_left_1
+      213: 7230035942035374425
+    second: Lava_sprite_sheet_6
   - first:
-      213: -576153698412744705
-    second: Main_Character_walk_left_2
+      213: -8777793714315813514
+    second: Lava_sprite_sheet_7
   - first:
-      213: -7240417701275256627
-    second: Main_Character_fall_left
-  - first:
-      213: -2325137707752414169
-    second: Main_Character_die_left
-  - first:
-      213: 2759010340054920457
-    second: Main_Character_jump_left
-  - first:
-      213: 6735327963984164659
-    second: Main_Character_idle_left
+      213: 7144228339679683463
+    second: Lava_sprite_sheet_8
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -158,253 +149,190 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Main_Character_walk_right_1
+      name: Lava_sprite_sheet_0
       rect:
         serializedVersion: 2
-        x: 21
-        y: 100
-        width: 35
-        height: 60
+        x: 4
+        y: 863
+        width: 205
+        height: 51
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7eaed2ab7d24fdb70800000000000000
-      internalID: 8925926480780585703
+      spriteID: 00d7830f91ddc94e0800000000000000
+      internalID: -1973459433220965120
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main_Character_walk_right_2
+      name: Lava_sprite_sheet_1
       rect:
         serializedVersion: 2
-        x: 80
-        y: 100
-        width: 43
-        height: 60
+        x: 4
+        y: 797
+        width: 205
+        height: 51
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78f89e186abdb09e0800000000000000
-      internalID: -1653986929937903737
+      spriteID: a9ce221387602c9d0800000000000000
+      internalID: -2755632908707107686
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main_Character_fall_right
+      name: Lava_sprite_sheet_2
       rect:
         serializedVersion: 2
-        x: 143
-        y: 100
-        width: 36
-        height: 61
+        x: 4
+        y: 731
+        width: 205
+        height: 51
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c71edd8dd3ea25c20800000000000000
-      internalID: 3193806666413760892
+      spriteID: 189dede22e67e9c50800000000000000
+      internalID: 6673902411630696833
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main_Character_die_right
+      name: Lava_sprite_sheet_3
       rect:
         serializedVersion: 2
-        x: 198
-        y: 100
-        width: 36
-        height: 61
+        x: 4
+        y: 665
+        width: 205
+        height: 51
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b18113a4d4009ee40800000000000000
-      internalID: 5686076336489175067
+      spriteID: ac61da9fb0238bb80800000000000000
+      internalID: -8378892079707908406
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main_Character_jump_right
+      name: Lava_sprite_sheet_4
       rect:
         serializedVersion: 2
-        x: 250
-        y: 102
-        width: 45
-        height: 61
+        x: 4
+        y: 599
+        width: 205
+        height: 51
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c9dd75f9256cb890800000000000000
-      internalID: -7440961253436171838
+      spriteID: d0821f3ed934c6bb0800000000000000
+      internalID: -4941500345719117811
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main_Character_idle_right
+      name: Lava_sprite_sheet_5
       rect:
         serializedVersion: 2
-        x: 316
-        y: 103
-        width: 43
-        height: 61
+        x: 4
+        y: 533
+        width: 205
+        height: 51
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b75e774d045153490800000000000000
-      internalID: -7767278614143834757
+      spriteID: 4657e72d7e6bbd750800000000000000
+      internalID: 6330854807984567652
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main_Character_walk_left_1
+      name: Lava_sprite_sheet_6
       rect:
         serializedVersion: 2
-        x: 20
-        y: 12
-        width: 37
-        height: 60
+        x: 4
+        y: 467
+        width: 205
+        height: 51
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61520d6d156899a20800000000000000
-      internalID: 3069632307084141846
+      spriteID: 9514356026f365460800000000000000
+      internalID: 7230035942035374425
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main_Character_walk_left_2
+      name: Lava_sprite_sheet_7
       rect:
         serializedVersion: 2
-        x: 83
-        y: 12
-        width: 41
-        height: 62
+        x: 4
+        y: 401
+        width: 205
+        height: 51
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fffa41e83471108f0800000000000000
-      internalID: -576153698412744705
+      spriteID: 67d9c82af130f2680800000000000000
+      internalID: -8777793714315813514
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main_Character_fall_left
+      name: Lava_sprite_sheet_8
       rect:
         serializedVersion: 2
-        x: 144
-        y: 13
-        width: 36
-        height: 61
+        x: 4
+        y: 335
+        width: 205
+        height: 51
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc8b90a467ed48b90800000000000000
-      internalID: -7240417701275256627
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Main_Character_die_left
-      rect:
-        serializedVersion: 2
-        x: 198
-        y: 14
-        width: 36
-        height: 61
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7242d8be2937bbfd0800000000000000
-      internalID: -2325137707752414169
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Main_Character_jump_left
-      rect:
-        serializedVersion: 2
-        x: 252
-        y: 14
-        width: 45
-        height: 61
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 90d6a925949f94620800000000000000
-      internalID: 2759010340054920457
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Main_Character_idle_left
-      rect:
-        serializedVersion: 2
-        x: 317
-        y: 12
-        width: 36
-        height: 61
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 337f7031911b87d50800000000000000
-      internalID: 6735327963984164659
+      spriteID: 783e2ecb2d5652360800000000000000
+      internalID: 7144228339679683463
       vertices: []
       indices: 
       edges: []

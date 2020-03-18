@@ -9,16 +9,41 @@ public class MovementCode : MonoBehaviour
     private float forceOfMovement = 200000f;
     
     private Rigidbody2D rigBdy;
+    public static Animator MainCharAnimator;
     void Start()
     {
         rigBdy = this.GetComponent<Rigidbody2D>();
+        MainCharAnimator = this.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        
 
-        //liikkeenVastavoima = -rigBdy.velocity;
+        if (rigBdy.velocity.x < -0.1)
+        {
+            MainCharAnimator.SetBool("LastMovementRight", false);
+            MainCharAnimator.SetBool("IsMoving", true);
+        }
+        if (rigBdy.velocity.x > 0.1)
+        {
+            MainCharAnimator.SetBool("LastMovementRight", true);
+            MainCharAnimator.SetBool("IsMoving", true);
+        }
+        if (rigBdy.velocity.x >= -0.1 && rigBdy.velocity.x <= 0.1)
+        {
+            MainCharAnimator.SetBool("IsMoving", false);
+        }
+        if (rigBdy.velocity.y <0)
+        {
+            MainCharAnimator.SetBool("IsInAir", true);
+        }
+        else
+        {
+            MainCharAnimator.SetBool("IsInAir", false);
+        }
+        
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             rigBdy.velocity = Vector2.zero;
@@ -31,4 +56,5 @@ public class MovementCode : MonoBehaviour
             rigBdy.AddForce(Vector2.left * this.forceOfMovement * Time.deltaTime);
         }
     }
+    
 }

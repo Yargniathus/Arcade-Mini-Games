@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class LavaScript : MonoBehaviour
 {
+   
     // Start is called before the first frame update
     void Start()
     {
-
+       
     }
 
 
@@ -18,7 +19,9 @@ public class LavaScript : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
            PlayerPrefs.SetFloat("points", TimeCounter.Timer);
+
            PlayerPrefs.SetString("reasonOfDeath", "You have become one with lava!");
+           
            StartCoroutine(LavaSoundCoroutine());
            
            
@@ -26,9 +29,14 @@ public class LavaScript : MonoBehaviour
     }
     IEnumerator LavaSoundCoroutine()
     {
-        
+        GameObject player = GameObject.Find("stickfigure");
         GameObject.Find("SoundObject").GetComponents<AudioSource>()[0].Play();
-     
+        player.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        player.GetComponent<Animator>().SetBool("IsDead", true);
+        
+
+
+
         yield return new WaitForSeconds(3);
        
         SceneManager.LoadScene("HyppyYlosEnd");
