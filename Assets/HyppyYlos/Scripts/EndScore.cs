@@ -9,6 +9,9 @@ public class EndScore : MonoBehaviour
     void Start()
     {
         float endScore = PlayerPrefs.GetFloat("points");
+        string endReasonOfDeath = PlayerPrefs.GetString("reasonOfDeath");
+
+        GameObject.Find("deathreason").GetComponent<Text>().text = endReasonOfDeath;
         this.GetComponent<Text>().text = "Score: " + endScore.ToString("0");
     }
 

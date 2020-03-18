@@ -18,9 +18,20 @@ public class LavaScript : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
            PlayerPrefs.SetFloat("points", TimeCounter.Timer);
-
-           SceneManager.LoadScene("HyppyYlosEnd");
+           PlayerPrefs.SetString("reasonOfDeath", "You have become one with lava!");
+           StartCoroutine(LavaSoundCoroutine());
+           
+           
         }
+    }
+    IEnumerator LavaSoundCoroutine()
+    {
+        
+        GameObject.Find("SoundObject").GetComponents<AudioSource>()[0].Play();
+     
+        yield return new WaitForSeconds(3);
+       
+        SceneManager.LoadScene("HyppyYlosEnd");
     }
     // Update is called once per frame
     void Update()
