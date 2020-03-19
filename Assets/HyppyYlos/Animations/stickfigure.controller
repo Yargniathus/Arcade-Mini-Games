@@ -469,9 +469,6 @@ AnimatorStateTransition:
     m_ConditionEvent: LastMovementRight
     m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: IsInAir
-    m_EventTreshold: 0
-  - m_ConditionMode: 1
     m_ConditionEvent: IsDead
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}

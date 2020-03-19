@@ -29,12 +29,15 @@ public class LavaScript : MonoBehaviour
     }
     IEnumerator LavaSoundCoroutine()
     {
+        Color roastedColor = new Color(0.9f, 0.5f, 0.5f);
         GameObject player = GameObject.Find("stickfigure");
         GameObject.Find("SoundObject").GetComponents<AudioSource>()[0].Play();
         player.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         player.GetComponent<Animator>().SetBool("IsDead", true);
-        
+        player.GetComponent<SpriteRenderer>().color = roastedColor;
 
+
+         
 
 
         yield return new WaitForSeconds(3);

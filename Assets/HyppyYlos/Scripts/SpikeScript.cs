@@ -18,9 +18,24 @@ public class SpikeScript : MonoBehaviour
         {
             PlayerPrefs.SetFloat("points", TimeCounter.Timer);
             PlayerPrefs.SetString("reasonOfDeath", "You've been brutally impaled by a stalagmite.");
+            StartCoroutine(SpikeSoundCoroutine());
 
-            SceneManager.LoadScene("HyppyYlosEnd");
+            
         }
+    }
+    IEnumerator SpikeSoundCoroutine()
+    {
+        GameObject player = GameObject.Find("stickfigure");
+        GameObject.Find("SoundObject").GetComponents<AudioSource>()[1].Play();
+        player.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        player.GetComponent<Animator>().SetBool("IsDead", true);
+
+
+
+
+        yield return new WaitForSeconds(3);
+
+        SceneManager.LoadScene("HyppyYlosEnd");
     }
     // Update is called once per frame
     void Update()
