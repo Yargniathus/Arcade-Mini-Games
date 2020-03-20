@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EndScore : MonoBehaviour
 {
@@ -18,6 +19,13 @@ public class EndScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            //SceneManager.LoadScene("MainMenu");
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            SceneManager.LoadScene("HyppyYlosMain");
+        }
     }
 }
