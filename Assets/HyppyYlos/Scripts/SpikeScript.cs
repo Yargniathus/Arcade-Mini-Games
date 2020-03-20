@@ -16,8 +16,14 @@ public class SpikeScript : MonoBehaviour
 
         if (col.gameObject.tag == "Player")
         {
-            PlayerPrefs.SetFloat("points", TimeCounter.Timer);
+            float currentTime = TimeCounter.Timer;
+            PlayerPrefs.SetFloat("points", currentTime);
             PlayerPrefs.SetString("reasonOfDeath", "You've been brutally impaled by a stalagmite.");
+            if (HighScoreTrackerHyppyYlos.IsHighScore == true)
+            {
+                PlayerPrefs.SetFloat("highscore", currentTime);
+            }
+
             StartCoroutine(SpikeSoundCoroutine());
 
             

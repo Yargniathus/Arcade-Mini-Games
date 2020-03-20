@@ -11,9 +11,17 @@ public class EndScore : MonoBehaviour
     {
         float endScore = PlayerPrefs.GetFloat("points");
         string endReasonOfDeath = PlayerPrefs.GetString("reasonOfDeath");
+        float highScore = PlayerPrefs.GetFloat("highscore");
 
         GameObject.Find("deathreason").GetComponent<Text>().text = endReasonOfDeath;
         this.GetComponent<Text>().text = "Score: " + endScore.ToString("0");
+        GameObject.Find("highscore").GetComponent<Text>().text = "High Score: " + highScore.ToString("0");
+        if (endScore == highScore)
+        {
+            GameObject.Find("reachedhighscore").GetComponent<Text>().text = "NEW HIGH SCORE!";
+           
+
+        }
     }
 
     // Update is called once per frame

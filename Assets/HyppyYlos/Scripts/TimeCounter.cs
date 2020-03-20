@@ -13,6 +13,7 @@ public class TimeCounter : MonoBehaviour
     private GameObject aikaTeksti = null;
     void Start()
     {
+        Timer = 0f;
         this.aikaTeksti = GameObject.Find("timetext");
     }
 

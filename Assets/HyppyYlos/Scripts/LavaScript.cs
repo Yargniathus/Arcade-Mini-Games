@@ -18,11 +18,16 @@ public class LavaScript : MonoBehaviour
        
         if (col.gameObject.tag == "Player")
         {
-           PlayerPrefs.SetFloat("points", TimeCounter.Timer);
+            float currentTime = TimeCounter.Timer;
+            PlayerPrefs.SetFloat("points", currentTime);
 
            PlayerPrefs.SetString("reasonOfDeath", "You have become one with lava!");
-           
-           StartCoroutine(LavaSoundCoroutine());
+            if (HighScoreTrackerHyppyYlos.IsHighScore == true)
+            {
+                PlayerPrefs.SetFloat("highscore", currentTime);
+            }
+
+            StartCoroutine(LavaSoundCoroutine());
            
            
         }
