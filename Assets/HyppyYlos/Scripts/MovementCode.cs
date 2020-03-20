@@ -7,6 +7,9 @@ public class MovementCode : MonoBehaviour
     // Start is called before the first frame update
 
     private float forceOfMovement = 200000f;
+
+    //values here should be between 1+(gymEquipmentMinPower/gymEquipmentMaxpower*4) and 1+(gymEquipmentMaxPower/gymEquipmentMaxpower*4)
+    private float gymControlMovementPower = 1f;
     
     private Rigidbody2D rigBdy;
     public static Animator MainCharAnimator;
@@ -47,13 +50,13 @@ public class MovementCode : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             rigBdy.velocity = Vector2.zero;
-            rigBdy.AddForce(Vector2.right * this.forceOfMovement * Time.deltaTime);
+            rigBdy.AddForce(Vector2.right * (this.forceOfMovement*gymControlMovementPower) * Time.deltaTime);
         }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             rigBdy.velocity = Vector2.zero;
-            rigBdy.AddForce(Vector2.left * this.forceOfMovement * Time.deltaTime);
+            rigBdy.AddForce(Vector2.left * (this.forceOfMovement*gymControlMovementPower) * Time.deltaTime);
         }
     }
     
