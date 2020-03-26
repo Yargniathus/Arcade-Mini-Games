@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HyppyYlosEnd.unity
     guid: 8168c86a3ac246546a6e54ff00f684c4
+  - enabled: 1
+    path: Assets/Scenes/LabyrinttiLevel1.unity
+    guid: c7c2ca1965762cc4ea75f91442022154
+  - enabled: 1
+    path: Assets/Scenes/LabyrinttiGameOver.unity
+    guid: 5cd40858d880c3b4aa3c3329446ae637
   m_configObjects: {}

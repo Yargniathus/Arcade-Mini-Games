@@ -1,29 +1,83 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 
 public class MovementScriptLabyrintti : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // Transforms to act as start and end markers for the journey.
+    public Vector2 startMarker;
+    public Vector2 endMarker;
+    public bool movement;
+    // Movement speed in units per second.
+    public float speed = 1.0F;
+
+    // Time when the movement started.
+    private float startTime;
+
+    // Total distance between the markers.
+    private float journeyLength;
+
     void Start()
     {
-        
+        movement = false;
+
+        // Keep a note of the time the movement started.
+        startTime = Time.time;
+
+        // Calculate the journey length.
+        journeyLength = Vector2.Distance(startMarker, endMarker);
     }
 
-    // Update is called once per frame
+    // Move to the target end position.
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            this.transform.position = new Vector2(this.transform.position.x+1, this.transform.position.y);
+            startTime = Time.time;
+            startMarker = new Vector2(this.transform.position.x, this.transform.position.y);
+            endMarker = new Vector2(this.transform.position.x, this.transform.position.y - 1);
+            movement = true;
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            this.transform.position = new Vector2(this.transform.position.x + -1, this.transform.position.y);
+            startTime = Time.time;
+            startMarker = new Vector2(this.transform.position.x, this.transform.position.y);
+            endMarker = new Vector2(this.transform.position.x-1, this.transform.position.y);
+            movement = true;
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            this.transform.position = new Vector2(this.transform.position.x, this.transform.position.y-1);
+            startTime = Time.time;
+            startMarker = new Vector2(this.transform.position.x, this.transform.position.y);
+            endMarker = new Vector2(this.transform.position.x+1, this.transform.position.y);
+            movement = true;
+        }
+        if (movement == true)
+        {
+            // Distance moved equals elapsed time times speed..
+            float distCovered = (Time.time - startTime) * speed;
+
+            // Fraction of journey completed equals current distance divided by total distance.
+            float fractionOfJourney = distCovered / journeyLength;
+
+            // Set our position as a fraction of the distance between the markers.
+            transform.position = Vector2.Lerp(startMarker, endMarker, fractionOfJourney);
+            if (fractionOfJourney == 1)
+            {
+                movement = false;
+            }
         }
     }
 }
+
+
+//if (Input.GetKeyDown(KeyCode.RightArrow))
+//{
+
+//    this.transform.position = new Vector2(this.transform.position.x + 1, this.transform.position.y);
+//}
+//if (Input.GetKeyDown(KeyCode.LeftArrow))
+//{
+//    this.transform.position = new Vector2(this.transform.position.x + -1, this.transform.position.y);
+//}
+
+
