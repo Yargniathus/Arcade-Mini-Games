@@ -16,10 +16,12 @@ public class MovementScriptLabyrintti : MonoBehaviour
     // Total distance between the markers.
     private float journeyLength;
 
+    public static Animator LabyrinttiJonesAnimator;
+
     void Start()
     {
         movement = false;
-
+        LabyrinttiJonesAnimator = this.GetComponent<Animator>();
         // Keep a note of the time the movement started.
         startTime = Time.time;
 
@@ -36,6 +38,8 @@ public class MovementScriptLabyrintti : MonoBehaviour
             startMarker = new Vector2(this.transform.position.x, this.transform.position.y);
             endMarker = new Vector2(this.transform.position.x, this.transform.position.y - 1);
             movement = true;
+            LabyrinttiJonesAnimator.SetBool("MovingDown", true);
+            LabyrinttiJonesAnimator.SetInteger("LastMovementDirection", 1);
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
@@ -43,6 +47,8 @@ public class MovementScriptLabyrintti : MonoBehaviour
             startMarker = new Vector2(this.transform.position.x, this.transform.position.y);
             endMarker = new Vector2(this.transform.position.x-1, this.transform.position.y);
             movement = true;
+            LabyrinttiJonesAnimator.SetBool("MovingLeft", true);
+            LabyrinttiJonesAnimator.SetInteger("LastMovementDirection", 0);
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
@@ -50,6 +56,8 @@ public class MovementScriptLabyrintti : MonoBehaviour
             startMarker = new Vector2(this.transform.position.x, this.transform.position.y);
             endMarker = new Vector2(this.transform.position.x+1, this.transform.position.y);
             movement = true;
+            LabyrinttiJonesAnimator.SetBool("MovingRight", true);
+            LabyrinttiJonesAnimator.SetInteger("LastMovementDirection", 2);
         }
         if (movement == true)
         {
@@ -61,9 +69,12 @@ public class MovementScriptLabyrintti : MonoBehaviour
 
             // Set our position as a fraction of the distance between the markers.
             transform.position = Vector2.Lerp(startMarker, endMarker, fractionOfJourney);
-            if (fractionOfJourney == 1)
+            if (fractionOfJourney > 0.99)
             {
                 movement = false;
+                LabyrinttiJonesAnimator.SetBool("MovingDown", false);
+                LabyrinttiJonesAnimator.SetBool("MovingLeft", false);
+                LabyrinttiJonesAnimator.SetBool("MovingRight", false);
             }
         }
     }
