@@ -231,6 +231,7 @@ GameObject:
   - component: {fileID: 399590377}
   - component: {fileID: 399590376}
   - component: {fileID: 399590375}
+  - component: {fileID: 399590378}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -303,6 +304,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &399590378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399590374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e322886c5de531408f51565b9b5ffa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &800373763
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,6 +393,7 @@ GameObject:
   - component: {fileID: 940628195}
   - component: {fileID: 940628197}
   - component: {fileID: 940628196}
+  - component: {fileID: 940628198}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -403,8 +417,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 95.99}
-  m_SizeDelta: {x: 160, y: 56.03}
+  m_AnchoredPosition: {x: 0, y: 50.36}
+  m_SizeDelta: {x: 334.17, y: 147.29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &940628196
 MonoBehaviour:
@@ -419,17 +433,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.6792453, g: 0.640364, b: 0.06087574, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 1b3f9928a74822f48b36ddfbc3968e1d, type: 3}
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -437,9 +451,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Placeholder
-
-    victoryscreen'
+  m_Text: You have escaped the Aztec dungeon!
 --- !u!222 &940628197
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -448,3 +460,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 940628194}
   m_CullTransparentMesh: 0
+--- !u!114 &940628198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940628194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1

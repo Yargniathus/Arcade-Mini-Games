@@ -29,7 +29,7 @@ public class EndScore : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            //SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("MainMenu");
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
