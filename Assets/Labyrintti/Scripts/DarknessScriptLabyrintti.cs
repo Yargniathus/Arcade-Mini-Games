@@ -11,6 +11,7 @@ public class DarknessScriptLabyrintti : MonoBehaviour
     GameObject darknessLabyrintti;
     GameObject instructions;
     GameObject timeUntilDarkness;
+    bool lightIncreasing = true;
     void Start()
     {
         this.timeUntilDarkness = GameObject.Find("Countdown");
@@ -34,6 +35,20 @@ public class DarknessScriptLabyrintti : MonoBehaviour
             darknessLabyrintti.GetComponent<SpriteRenderer>().color = new Color(1F, 1f, 1f, (opacityTimer / 2 -3));
             this.timeUntilDarkness.GetComponent<Text>().text = "SURVIVE!";
             this.instructions.GetComponent<Text>().text = "";
+            if (lightIncreasing == true)
+            {
+                Vector3 previousCircleOfLight = darknessLabyrintti.transform.localScale;
+                darknessLabyrintti.transform.localScale = new Vector3(previousCircleOfLight.x += 0.3f, previousCircleOfLight.y += 0.3f, previousCircleOfLight.z += 0.3f);
+                if (darknessLabyrintti.transform.localScale.x >120)
+                { lightIncreasing = false;}
+            }
+            if (lightIncreasing==false)
+            {
+                Vector3 previousCircleOfLight = darknessLabyrintti.transform.localScale;
+                darknessLabyrintti.transform.localScale = new Vector3(previousCircleOfLight.x -= 0.3f, previousCircleOfLight.y -= 0.3f, previousCircleOfLight.z -= 0.3f);
+                if (darknessLabyrintti.transform.localScale.x < 110)
+                { lightIncreasing = true; }
+            }
         }
 
 
