@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LabyrinttiGameOver.unity
     guid: 5cd40858d880c3b4aa3c3329446ae637
+  - enabled: 1
+    path: Assets/Scenes/LabyrinttiVictory.unity
+    guid: 12672e3c855dcc14e9964907fbd5b3f7
   m_configObjects: {}
