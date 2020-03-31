@@ -31,50 +31,52 @@ public class MovementScriptLabyrintti : MonoBehaviour
 
     // Move to the target end position.
     void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+    {   if (GameStartLabyrintti.LabyrinttiGameStarted != false)
         {
-            startTime = Time.time;
-            startMarker = new Vector2(this.transform.position.x, this.transform.position.y);
-            endMarker = new Vector2(this.transform.position.x, this.transform.position.y - 1);
-            movement = true;
-            LabyrinttiJonesAnimator.SetBool("MovingDown", true);
-            LabyrinttiJonesAnimator.SetInteger("LastMovementDirection", 1);
-        }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            startTime = Time.time;
-            startMarker = new Vector2(this.transform.position.x, this.transform.position.y);
-            endMarker = new Vector2(this.transform.position.x-1, this.transform.position.y);
-            movement = true;
-            LabyrinttiJonesAnimator.SetBool("MovingLeft", true);
-            LabyrinttiJonesAnimator.SetInteger("LastMovementDirection", 0);
-        }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            startTime = Time.time;
-            startMarker = new Vector2(this.transform.position.x, this.transform.position.y);
-            endMarker = new Vector2(this.transform.position.x+1, this.transform.position.y);
-            movement = true;
-            LabyrinttiJonesAnimator.SetBool("MovingRight", true);
-            LabyrinttiJonesAnimator.SetInteger("LastMovementDirection", 2);
-        }
-        if (movement == true)
-        {
-            // Distance moved equals elapsed time times speed..
-            float distCovered = (Time.time - startTime) * speed;
-
-            // Fraction of journey completed equals current distance divided by total distance.
-            float fractionOfJourney = distCovered / journeyLength;
-
-            // Set our position as a fraction of the distance between the markers.
-            transform.position = Vector2.Lerp(startMarker, endMarker, fractionOfJourney);
-            if (fractionOfJourney > 0.99)
+            if (Input.GetKeyDown(KeyCode.DownArrow))
             {
-                movement = false;
-                LabyrinttiJonesAnimator.SetBool("MovingDown", false);
-                LabyrinttiJonesAnimator.SetBool("MovingLeft", false);
-                LabyrinttiJonesAnimator.SetBool("MovingRight", false);
+                startTime = Time.time;
+                startMarker = new Vector2(this.transform.position.x, this.transform.position.y);
+                endMarker = new Vector2(this.transform.position.x, this.transform.position.y - 1);
+                movement = true;
+                LabyrinttiJonesAnimator.SetBool("MovingDown", true);
+                LabyrinttiJonesAnimator.SetInteger("LastMovementDirection", 1);
+            }
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                startTime = Time.time;
+                startMarker = new Vector2(this.transform.position.x, this.transform.position.y);
+                endMarker = new Vector2(this.transform.position.x - 1, this.transform.position.y);
+                movement = true;
+                LabyrinttiJonesAnimator.SetBool("MovingLeft", true);
+                LabyrinttiJonesAnimator.SetInteger("LastMovementDirection", 0);
+            }
+            if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                startTime = Time.time;
+                startMarker = new Vector2(this.transform.position.x, this.transform.position.y);
+                endMarker = new Vector2(this.transform.position.x + 1, this.transform.position.y);
+                movement = true;
+                LabyrinttiJonesAnimator.SetBool("MovingRight", true);
+                LabyrinttiJonesAnimator.SetInteger("LastMovementDirection", 2);
+            }
+            if (movement == true)
+            {
+                // Distance moved equals elapsed time times speed..
+                float distCovered = (Time.time - startTime) * speed;
+
+                // Fraction of journey completed equals current distance divided by total distance.
+                float fractionOfJourney = distCovered / journeyLength;
+
+                // Set our position as a fraction of the distance between the markers.
+                transform.position = Vector2.Lerp(startMarker, endMarker, fractionOfJourney);
+                if (fractionOfJourney > 0.99)
+                {
+                    movement = false;
+                    LabyrinttiJonesAnimator.SetBool("MovingDown", false);
+                    LabyrinttiJonesAnimator.SetBool("MovingLeft", false);
+                    LabyrinttiJonesAnimator.SetBool("MovingRight", false);
+                }
             }
         }
     }

@@ -9,45 +9,44 @@ public class DarknessScriptLabyrintti : MonoBehaviour
     float opacityTimer = 0;
     float startGameTimer = 5;
     GameObject darknessLabyrintti;
-    GameObject instructions;
     GameObject timeUntilDarkness;
     bool lightIncreasing = true;
     void Start()
     {
-        this.timeUntilDarkness = GameObject.Find("Countdown");
-        this.instructions = GameObject.Find("Instructions");
-    
-        
+        this.timeUntilDarkness = GameObject.Find("Countdown");     
         
     }
 
-    // Update is called once per frame
     void Update()
-    {   
-        opacityTimer += Time.deltaTime;
-        startGameTimer = 5 - opacityTimer;
-        if (startGameTimer > 0)
+    {
+        if (GameStartLabyrintti.LabyrinttiGameStarted != false)
         {
-            this.timeUntilDarkness.GetComponent<Text>().text = "Time until darkness: " + this.startGameTimer.ToString("0");
-        } else
-        {
-            darknessLabyrintti = GameObject.Find("Pimennys");
-            darknessLabyrintti.GetComponent<SpriteRenderer>().color = new Color(1F, 1f, 1f, (opacityTimer / 2 -3));
-            this.timeUntilDarkness.GetComponent<Text>().text = "SURVIVE!";
-            this.instructions.GetComponent<Text>().text = "";
-            if (lightIncreasing == true)
+            opacityTimer += Time.deltaTime;
+            startGameTimer = 5 - opacityTimer;
+            if (startGameTimer > 0)
             {
-                Vector3 previousCircleOfLight = darknessLabyrintti.transform.localScale;
-                darknessLabyrintti.transform.localScale = new Vector3(previousCircleOfLight.x += 0.3f, previousCircleOfLight.y += 0.3f, previousCircleOfLight.z += 0.3f);
-                if (darknessLabyrintti.transform.localScale.x >120)
-                { lightIncreasing = false;}
+                this.timeUntilDarkness.GetComponent<Text>().text = "Time until darkness: " + this.startGameTimer.ToString("0");
             }
-            if (lightIncreasing==false)
+            else
             {
-                Vector3 previousCircleOfLight = darknessLabyrintti.transform.localScale;
-                darknessLabyrintti.transform.localScale = new Vector3(previousCircleOfLight.x -= 0.3f, previousCircleOfLight.y -= 0.3f, previousCircleOfLight.z -= 0.3f);
-                if (darknessLabyrintti.transform.localScale.x < 110)
-                { lightIncreasing = true; }
+                darknessLabyrintti = GameObject.Find("Pimennys");
+                darknessLabyrintti.GetComponent<SpriteRenderer>().color = new Color(1F, 1f, 1f, (opacityTimer / 2 - 3));
+                this.timeUntilDarkness.GetComponent<Text>().text = "SURVIVE!";
+                
+                if (lightIncreasing == true)
+                {
+                    Vector3 previousCircleOfLight = darknessLabyrintti.transform.localScale;
+                    darknessLabyrintti.transform.localScale = new Vector3(previousCircleOfLight.x += 0.3f, previousCircleOfLight.y += 0.3f, previousCircleOfLight.z += 0.3f);
+                    if (darknessLabyrintti.transform.localScale.x > 120)
+                    { lightIncreasing = false; }
+                }
+                if (lightIncreasing == false)
+                {
+                    Vector3 previousCircleOfLight = darknessLabyrintti.transform.localScale;
+                    darknessLabyrintti.transform.localScale = new Vector3(previousCircleOfLight.x -= 0.3f, previousCircleOfLight.y -= 0.3f, previousCircleOfLight.z -= 0.3f);
+                    if (darknessLabyrintti.transform.localScale.x < 110)
+                    { lightIncreasing = true; }
+                }
             }
         }
 

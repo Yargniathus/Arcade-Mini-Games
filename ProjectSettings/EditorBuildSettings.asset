@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LabyrinttiVictory.unity
     guid: 12672e3c855dcc14e9964907fbd5b3f7
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 2d287b1bb7f949649918c1ab03c0bf20
   m_configObjects: {}

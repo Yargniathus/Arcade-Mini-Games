@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efae279538bf132489bfb39f5881e326, type: 3}
+  m_Name: CrocodileTile
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: -8548697407063112518, guid: eb51e8326380c9d4b92f205ba85b2428, type: 3}
+  - {fileID: 832054423373321325, guid: eb51e8326380c9d4b92f205ba85b2428, type: 3}
+  - {fileID: 1551621662719357306, guid: eb51e8326380c9d4b92f205ba85b2428, type: 3}
+  - {fileID: 2699642712042865989, guid: eb51e8326380c9d4b92f205ba85b2428, type: 3}
+  - {fileID: 5027252514431866360, guid: eb51e8326380c9d4b92f205ba85b2428, type: 3}
+  - {fileID: -5380483094805840910, guid: eb51e8326380c9d4b92f205ba85b2428, type: 3}
+  m_MinSpeed: 1
+  m_MaxSpeed: 6
+  m_AnimationStartTime: 0
+  m_TileColliderType: 0
