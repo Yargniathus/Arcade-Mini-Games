@@ -1714,6 +1714,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6625b909067c484f998c405f2a05547, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile: {fileID: 11400000, guid: cdb7809767883e64e97e8a80fab20b9f, type: 2}
+  tileMap: {fileID: 1432225954}
 --- !u!19719996 &1432225956
 TilemapCollider2D:
   m_ObjectHideFlags: 0

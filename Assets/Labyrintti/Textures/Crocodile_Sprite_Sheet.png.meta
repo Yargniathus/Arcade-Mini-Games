@@ -20,6 +20,60 @@ TextureImporter:
   - first:
       213: -5380483094805840910
     second: Crocodile_Sprite_Sheet_5
+  - first:
+      213: 7191054339867243660
+    second: Crocodile_Sprite_Sheet_6
+  - first:
+      213: -2440369508607539030
+    second: Crocodile_Sprite_Sheet_7
+  - first:
+      213: 3995591253322155815
+    second: Crocodile_Sprite_Sheet_8
+  - first:
+      213: 435645565530690258
+    second: Crocodile_Sprite_Sheet_9
+  - first:
+      213: -8797500948144029016
+    second: Crocodile_Sprite_Sheet_10
+  - first:
+      213: 2930959983870396756
+    second: Crocodile_Sprite_Sheet_11
+  - first:
+      213: -6139035030138713603
+    second: Crocodile_Sprite_Sheet_0
+  - first:
+      213: -1616649219728266396
+    second: Crocodile_Sprite_Sheet_1
+  - first:
+      213: -5445102859421199506
+    second: Crocodile_Sprite_Sheet_2
+  - first:
+      213: 6158040432005224486
+    second: Crocodile_Sprite_Sheet_3
+  - first:
+      213: -5746483265271071315
+    second: Crocodile_Sprite_Sheet_4
+  - first:
+      213: -4570003027783702259
+    second: Crocodile_Sprite_Sheet_5
+  - first:
+      213: 1233591188947897820
+    second: Crocodile_Sprite_Sheet_6
+  - first:
+      213: 3141697379468888348
+    second: Crocodile_Sprite_Sheet_7
+  - first:
+      213: 8569032968683693749
+    second: Crocodile_Sprite_Sheet_8
+  - first:
+      213: -6577840177901936838
+    second: Crocodile_Sprite_Sheet_9
+  - first:
+      213: -4985346661223986100
+    second: Crocodile_Sprite_Sheet_10
+  - first:
+      213: -621370694463235917
+    second: Crocodile_Sprite_Sheet_11
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -49,7 +103,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -59,7 +113,7 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 1
+  spriteExtrude: 0
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
@@ -79,9 +133,9 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -91,9 +145,9 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -103,9 +157,9 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: Windows Store Apps
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -115,9 +169,9 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -127,9 +181,9 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -144,7 +198,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 34
+        y: 44
         width: 32
         height: 32
       alignment: 0
@@ -154,8 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab443bf400dec5980800000000000000
-      internalID: -8548697407063112518
+      spriteID: df907e48a24cdcaa0800000000000000
+      internalID: -6139035030138713603
       vertices: []
       indices: 
       edges: []
@@ -164,8 +218,8 @@ TextureImporter:
       name: Crocodile_Sprite_Sheet_1
       rect:
         serializedVersion: 2
-        x: 34
-        y: 34
+        x: 40
+        y: 44
         width: 32
         height: 32
       alignment: 0
@@ -175,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6495f2f61d0c8b00800000000000000
-      internalID: 832054423373321325
+      spriteID: 46b2fab99128099e0800000000000000
+      internalID: -1616649219728266396
       vertices: []
       indices: 
       edges: []
@@ -185,8 +239,8 @@ TextureImporter:
       name: Crocodile_Sprite_Sheet_2
       rect:
         serializedVersion: 2
-        x: 68
-        y: 34
+        x: 80
+        y: 44
         width: 32
         height: 32
       alignment: 0
@@ -196,8 +250,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7130307ea7788510800000000000000
-      internalID: 1551621662719357306
+      spriteID: e635cba7ccb1f64b0800000000000000
+      internalID: -5445102859421199506
       vertices: []
       indices: 
       edges: []
@@ -206,8 +260,8 @@ TextureImporter:
       name: Crocodile_Sprite_Sheet_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 120
+        y: 44
         width: 32
         height: 32
       alignment: 0
@@ -217,8 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54589c74ebe077520800000000000000
-      internalID: 2699642712042865989
+      spriteID: 6281a2e6521c57550800000000000000
+      internalID: 6158040432005224486
       vertices: []
       indices: 
       edges: []
@@ -227,8 +281,8 @@ TextureImporter:
       name: Crocodile_Sprite_Sheet_4
       rect:
         serializedVersion: 2
-        x: 34
-        y: 0
+        x: 160
+        y: 44
         width: 32
         height: 32
       alignment: 0
@@ -238,8 +292,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f596eeb68364c540800000000000000
-      internalID: 5027252514431866360
+      spriteID: dad7ac99ae36040b0800000000000000
+      internalID: -5746483265271071315
       vertices: []
       indices: 
       edges: []
@@ -248,8 +302,8 @@ TextureImporter:
       name: Crocodile_Sprite_Sheet_5
       rect:
         serializedVersion: 2
-        x: 68
-        y: 0
+        x: 200
+        y: 44
         width: 32
         height: 32
       alignment: 0
@@ -259,8 +313,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2fb7a1ed12fa455b0800000000000000
-      internalID: -5380483094805840910
+      spriteID: d092e7a85761490c0800000000000000
+      internalID: -4570003027783702259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crocodile_Sprite_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdd8a4786a89e1110800000000000000
+      internalID: 1233591188947897820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crocodile_Sprite_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 4
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c19c4070f1d899b20800000000000000
+      internalID: 3141697379468888348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crocodile_Sprite_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 4
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b6a00795125be670800000000000000
+      internalID: 8569032968683693749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crocodile_Sprite_Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 4
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3fdcd68531d6b4a0800000000000000
+      internalID: -6577840177901936838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crocodile_Sprite_Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 4
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4c809700ad70dab0800000000000000
+      internalID: -4985346661223986100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crocodile_Sprite_Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 4
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b85ea245a27067f0800000000000000
+      internalID: -621370694463235917
       vertices: []
       indices: 
       edges: []

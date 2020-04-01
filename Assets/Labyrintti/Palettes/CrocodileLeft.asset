@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: efae279538bf132489bfb39f5881e326, type: 3}
-  m_Name: CrocodileTile
+  m_Name: CrocodileLeft
   m_EditorClassIdentifier: 
   m_AnimatedSprites:
   - {fileID: -8548697407063112518, guid: eb51e8326380c9d4b92f205ba85b2428, type: 3}
@@ -19,7 +19,10 @@ MonoBehaviour:
   - {fileID: 2699642712042865989, guid: eb51e8326380c9d4b92f205ba85b2428, type: 3}
   - {fileID: 5027252514431866360, guid: eb51e8326380c9d4b92f205ba85b2428, type: 3}
   - {fileID: -5380483094805840910, guid: eb51e8326380c9d4b92f205ba85b2428, type: 3}
-  m_MinSpeed: 1
+  - {fileID: -5380483094805840910, guid: eb51e8326380c9d4b92f205ba85b2428, type: 3}
+  - {fileID: -5380483094805840910, guid: eb51e8326380c9d4b92f205ba85b2428, type: 3}
+  - {fileID: -5380483094805840910, guid: eb51e8326380c9d4b92f205ba85b2428, type: 3}
+  m_MinSpeed: 6
   m_MaxSpeed: 6
   m_AnimationStartTime: 0
   m_TileColliderType: 0

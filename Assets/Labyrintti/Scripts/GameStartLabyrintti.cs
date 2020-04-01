@@ -24,6 +24,11 @@ public class GameStartLabyrintti : MonoBehaviour
 
             StartCoroutine(ExecuteAfterTime());
         }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+
+            StartCoroutine(ExecuteAfterTime());
+        }
 
     }
 
