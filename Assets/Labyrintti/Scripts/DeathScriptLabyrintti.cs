@@ -8,8 +8,8 @@ public class DeathScriptLabyrintti : MonoBehaviour
 {
    
     
-    //public Tile tile;
-    //public Tilemap tileMap;
+    public AnimatedTile tile;
+    public Tilemap tileMap;
      
     void Start()
     {
@@ -20,13 +20,13 @@ public class DeathScriptLabyrintti : MonoBehaviour
 
     void Update()
     {
-        ////Vector3Int currentCell = tileMap.WorldToCell(transform.position);
-        ////currentCell.x += 1;
-        //if (Input.GetKeyDown(KeyCode.UpArrow))
-        //{
+        Vector3Int currentCell = tileMap.WorldToCell(transform.position);
+       currentCell.x += 1;
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
             
-        //    tileMap.SetTile(new Vector3Int(2, 2, 0), tile);
-        //}
+            tileMap.SetTile(new Vector3Int(1, 1, 0), tile);
+        }
     }
 
     void OnTriggerStay2D(Collider2D other)
