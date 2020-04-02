@@ -1,6 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
+using Xamk.GymApi;
 
 public class MovementCode : MonoBehaviour
 {
@@ -12,18 +15,40 @@ public class MovementCode : MonoBehaviour
     private float gymControlMovementPower = 1f;
     
     private Rigidbody2D rigBdy;
+    private CancellationTokenSource cancelTokenSource;
+    private GymMachineListener gymMachineListener;
+
     public static Animator MainCharAnimator;
+
+
     void Start()
     {
         rigBdy = this.GetComponent<Rigidbody2D>();
         MainCharAnimator = this.GetComponent<Animator>();
+
+        cancelTokenSource = new CancellationTokenSource();
+        gymMachineListener = new GymMachineListener(HurObject.Machine.OptimalRhomb);
+        gymMachineListener.LeftRepHandler += LeftRepHandler;
+        gymMachineListener.RightRepHandler += RightRepHandler;
+        gymMachineListener.StartListener(cancelTokenSource.Token);
+
+    }
+
+    private void LeftRepHandler(object sender, LeftRepEventArgs e)
+    {
+        rigBdy.velocity = Vector2.zero;
+        rigBdy.AddForce(Vector2.left * (this.forceOfMovement * 1) * Time.deltaTime);
+    }
+
+    private void RightRepHandler(object sender, RightRepEventArgs e)
+    {
+        rigBdy.velocity = Vector2.zero;
+        rigBdy.AddForce(Vector2.right * (this.forceOfMovement * 1) * Time.deltaTime);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-
         if (rigBdy.velocity.x < -0.1)
         {
             MainCharAnimator.SetBool("LastMovementRight", false);
@@ -51,6 +76,7 @@ public class MovementCode : MonoBehaviour
         {
             rigBdy.velocity = Vector2.zero;
             rigBdy.AddForce(Vector2.right * (this.forceOfMovement*gymControlMovementPower) * Time.deltaTime);
+
         }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
@@ -59,5 +85,14 @@ public class MovementCode : MonoBehaviour
             rigBdy.AddForce(Vector2.left * (this.forceOfMovement*gymControlMovementPower) * Time.deltaTime);
         }
     }
-    
+
+    private void OnDestroy()
+    {
+        if (gymMachineListener != null)
+        {
+            //Kills the UDP message listening thread 
+            cancelTokenSource.Cancel();
+        }
+    }
+
 }

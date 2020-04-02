@@ -40,7 +40,5 @@ public class GameStartLabyrintti : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         LabyrinttiGameStarted = true;
-
-        
     }
 }
