@@ -46,13 +46,7 @@ public class MovementScriptLabyrintti : MonoBehaviour
         if(movement)
             return;
 
-        startTime = Time.time;
-        startMarker = new Vector2(transform.position.x, transform.position.y);
-        endMarker = new Vector2(transform.position.x - 1, transform.position.y);
-        movement = true;
-        LabyrinttiJonesAnimator.SetBool("MovingLeft", true);
-        LabyrinttiJonesAnimator.SetInteger("LastMovementDirection", 0);
-        MovementHandling();
+        PlayerMovement(MovementDirection.Left);
     }
 
     private void RightRepHandler(object sender, RightRepEventArgs e)
@@ -60,12 +54,41 @@ public class MovementScriptLabyrintti : MonoBehaviour
         if (movement)
             return;
 
+        PlayerMovement(MovementDirection.Right);
+    }
+
+    private enum MovementDirection { Left, Down, Right }
+
+    private void PlayerMovement(MovementDirection direction)
+    {
+        int x = 0;
+        int y = 0;
+        string animationBool = "MovingLeft";
+
+        if (direction == MovementDirection.Left)
+        {
+            x = -1;
+            animationBool = "MovingLeft";
+        }
+        else if (direction == MovementDirection.Right)
+        {
+            x = 1;
+            animationBool = "MovingRight";
+        }
+
+        if (direction == MovementDirection.Down)
+        {
+            y = -1;
+            animationBool = "MovingDown";
+        }
+
+
         startTime = Time.time;
         startMarker = new Vector2(transform.position.x, transform.position.y);
-        endMarker = new Vector2(transform.position.x + 1, transform.position.y);
+        endMarker = new Vector2(transform.position.x + x, transform.position.y + y);
         movement = true;
-        LabyrinttiJonesAnimator.SetBool("MovingRight", true);
-        LabyrinttiJonesAnimator.SetInteger("LastMovementDirection", 2);
+        LabyrinttiJonesAnimator.SetBool(animationBool, true);
+        LabyrinttiJonesAnimator.SetInteger("LastMovementDirection", (int)direction);
         MovementHandling();
     }
 
@@ -78,12 +101,7 @@ public class MovementScriptLabyrintti : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.DownArrow))
                 {
-                    startTime = Time.time;
-                    startMarker = new Vector2(transform.position.x, transform.position.y);
-                    endMarker = new Vector2(transform.position.x, transform.position.y - 1);
-                    movement = true;
-                    LabyrinttiJonesAnimator.SetBool("MovingDown", true);
-                    LabyrinttiJonesAnimator.SetInteger("LastMovementDirection", 1);
+                    PlayerMovement(MovementDirection.Down);
                 }
 
                 if (Input.GetKeyDown(KeyCode.LeftArrow))
