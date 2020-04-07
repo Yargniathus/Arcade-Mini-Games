@@ -27,6 +27,8 @@ public class RandomTileLabyrintti : MonoBehaviour
     private int yToArrayValue;
     private int leftEdgeValue;
     private int rightEdgeValue;
+    private int bottomEdgeValue;
+    private int topEdgeValue;
     private bool allTilesGenerated;
     // Start is called before the first frame update
     void Start()
@@ -35,6 +37,7 @@ public class RandomTileLabyrintti : MonoBehaviour
         yValue = 2;
         leftEdgeValue = -3;
         rightEdgeValue = 0;
+        bottomEdgeValue = -3;
         LastPlacedTile = EmptyTile;
         yToArrayValue = yValue * -1 + 2;
         allTilesGenerated = false;
@@ -68,7 +71,7 @@ public class RandomTileLabyrintti : MonoBehaviour
             if (LastPlacedTile==VerticalTile || LastPlacedTile == LeftToDownTile || LastPlacedTile == RightToDownTile)
             {
                 yValue -= 1;
-                if (yValue == -3)
+                if (yValue == bottomEdgeValue)
                 {
                     yToArrayValue = yValue * -1 + 2;
                     WaterTileMap.SetTile(new Vector3Int(xValue, yValue, 0), null);
