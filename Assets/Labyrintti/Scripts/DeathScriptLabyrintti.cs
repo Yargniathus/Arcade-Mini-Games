@@ -29,7 +29,7 @@ public class DeathScriptLabyrintti : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.tag =="Player")
+        if (other.gameObject.tag == "Player" && GameStartLabyrintti.LabyrinttiGameStarted == true)
         {
             StartCoroutine(CrocDelayDeath());
            

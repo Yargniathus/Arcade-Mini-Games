@@ -51,7 +51,8 @@ public class RandomTileLabyrintti : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow) && allTilesGenerated!=true)
+        if (/*Input.GetKeyDown(KeyCode.UpArrow) &&*/
+            allTilesGenerated!=true)
         {
                       
             yToArrayValue = yValue * -1 + 2;
@@ -59,7 +60,8 @@ public class RandomTileLabyrintti : MonoBehaviour
             
             RandomizePiece();
 
-            
+
+            WaterTileMap.SetTile(new Vector3Int(xValue, yValue, 0), null);
             GroundTileMap.SetTile(new Vector3Int(xValue, yValue, 0), TileToBePlaced);
             TileList.SetValue(TileToBePlaced, yToArrayValue, xToArrayValue);
             LastPlacedTile = TileToBePlaced;
@@ -69,6 +71,7 @@ public class RandomTileLabyrintti : MonoBehaviour
                 if (yValue == -3)
                 {
                     yToArrayValue = yValue * -1 + 2;
+                    WaterTileMap.SetTile(new Vector3Int(xValue, yValue, 0), null);
                     TileList.SetValue(FinishTile, yToArrayValue, xToArrayValue);
                     FinishTileMap.SetTile(new Vector3Int(xValue, yValue, 0), FinishTile);
                     //foreach (Tile tiles in TileList)
