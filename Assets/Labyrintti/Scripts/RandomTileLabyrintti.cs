@@ -32,12 +32,12 @@ public class RandomTileLabyrintti : MonoBehaviour
     {
         
         xValue = -1;
-        yValue = PlayerPrefs.GetInt("LabyrinttiLevel")+1;
-        leftEdgeValue = PlayerPrefs.GetInt("LabyrinttiLevel")*-1-2;
-        rightEdgeValue = PlayerPrefs.GetInt("LabyrinttiLevel")-1;
-        bottomEdgeValue = PlayerPrefs.GetInt("LabyrinttiLevel")*-1-2;
+        yValue = PlayerPrefs.GetInt("LabyrinttiLevel");
+        leftEdgeValue = PlayerPrefs.GetInt("LabyrinttiLevel")*-1-1;
+        rightEdgeValue = PlayerPrefs.GetInt("LabyrinttiLevel")-2;
+        bottomEdgeValue = PlayerPrefs.GetInt("LabyrinttiLevel")*-1-1;
         float cameraSize = this.GetComponent<Camera>().orthographicSize;
-        this.GetComponent<Camera>().orthographicSize = cameraSize + PlayerPrefs.GetInt("LabyrinttiLevel")-1;
+        this.GetComponent<Camera>().orthographicSize = cameraSize + PlayerPrefs.GetInt("LabyrinttiLevel")-2;
         LastPlacedTile = EmptyTile;
         allTilesGenerated = false;
 
