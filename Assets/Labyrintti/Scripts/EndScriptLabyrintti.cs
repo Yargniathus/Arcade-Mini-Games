@@ -16,10 +16,11 @@ public class EndScriptLabyrintti : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            SceneManager.LoadScene("LabyrinttiLevel1");
+            SceneManager.LoadScene("LabyrinttiRandomLevel");
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
+            PlayerPrefs.SetInt("LabyrinttiLevel", 1);
             SceneManager.LoadScene("MainMenu");
         }
     }

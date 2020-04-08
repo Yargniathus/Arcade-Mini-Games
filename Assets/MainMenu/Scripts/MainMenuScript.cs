@@ -61,7 +61,8 @@ public class MainMenuScript : MonoBehaviour
         {
             if (game2.enabled == true)
             {
-                SceneManager.LoadScene("LabyrinttiLevel1");
+                PlayerPrefs.SetInt("LabyrinttiLevel", 1);
+                SceneManager.LoadScene("LabyrinttiRandomLevel");
             }
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))

@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 2d287b1bb7f949649918c1ab03c0bf20
+  - enabled: 1
+    path: Assets/Scenes/LabyrinttiRandomLevel.unity
+    guid: ee6419f6bfca928409ab2ffc7a0182c6
   m_configObjects: {}

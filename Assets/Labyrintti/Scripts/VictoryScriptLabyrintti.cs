@@ -21,7 +21,8 @@ public class VictoryScriptLabyrintti : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-          
+            int currentLevel = PlayerPrefs.GetInt("LabyrinttiLevel");
+            PlayerPrefs.SetInt("LabyrinttiLevel", currentLevel+1);
             SceneManager.LoadScene("LabyrinttiVictory");
         }
     }
