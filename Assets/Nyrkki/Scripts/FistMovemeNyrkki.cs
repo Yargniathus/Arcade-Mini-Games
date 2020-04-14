@@ -9,6 +9,7 @@ public class FistMovemeNyrkki : MonoBehaviour
     bool MovingMiddle;
     public GameObject LeftFist;
     public GameObject RightFist;
+    public GameObject Lightning;
     // Start is called before the first frame update
     void Start()
     {
@@ -76,6 +77,7 @@ public class FistMovemeNyrkki : MonoBehaviour
         }
         if (LeftFist.GetComponent<Transform>().position.x >= -1)
         {
+            Instantiate(Lightning, new Vector3(0, 2, 0), Quaternion.identity);
             MovingMiddle = false;
         }
         if (MovingMiddle == false && LeftFist.GetComponent<Transform>().position.x > -5)
