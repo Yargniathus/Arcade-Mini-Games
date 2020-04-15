@@ -23,9 +23,10 @@ public class OrcHitNyrkki : MonoBehaviour
         {
             Vector3 OrcSize = this.gameObject.transform.localScale;
             this.gameObject.transform.Translate(0, 1f * Time.deltaTime, 0, Space.World);
-            this.gameObject.transform.Rotate(0, 0, 180f * Time.deltaTime);
-            //BUG: redo to make decreasing start faster
-            this.gameObject.transform.localScale = new Vector3(OrcSize.x-=0.23f*Time.deltaTime, OrcSize.y -= 0.23f*Time.deltaTime, OrcSize.z -= 0.23f*Time.deltaTime );
+            this.gameObject.transform.Translate(0, 0.5f * Time.deltaTime, 0);
+            this.gameObject.transform.Rotate(0, 0, 360f * Time.deltaTime);
+            //BUG: redo to make decreasing start faste
+            this.gameObject.transform.localScale -= new Vector3(OrcSize.x*0.9999f*Time.deltaTime*3, OrcSize.y * 0.9999f * Time.deltaTime*3, OrcSize.z * 0.9999f * Time.deltaTime*3 );
 
            
         }
