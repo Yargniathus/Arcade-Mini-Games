@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OrcHitNyrkki : MonoBehaviour
 {
-    bool GotHit = false;
+    public bool GotHit = false;
     // Start is called before the first frame update
     void OnTriggerEnter2D(Collider2D col)
     {
