@@ -147,13 +147,3 @@ public class MovementScriptLabyrintti : MonoBehaviour
     }
 }
 
-
-//if (Input.GetKeyDown(KeyCode.RightArrow))
-//{
-
-//    this.transform.position = new Vector2(this.transform.position.x + 1, this.transform.position.y);
-//}
-//if (Input.GetKeyDown(KeyCode.LeftArrow))
-//{
-//    this.transform.position = new Vector2(this.transform.position.x + -1, this.transform.position.y);
-//}
