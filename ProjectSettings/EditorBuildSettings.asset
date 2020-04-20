@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NyrkkiVictory.unity
     guid: 06b38a3f4a9600348a49db87b949128e
+  - enabled: 1
+    path: Assets/Scenes/NyrkkiDeath.unity
+    guid: a0b1e6db29b4edc47955091a91b2dd1e
   m_configObjects: {}

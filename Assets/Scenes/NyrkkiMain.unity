@@ -566,8 +566,10 @@ GameObject:
   - component: {fileID: 648199810}
   - component: {fileID: 648199811}
   - component: {fileID: 648199812}
+  - component: {fileID: 648199813}
+  - component: {fileID: 648199814}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: MainCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -681,6 +683,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Timer: 0
   TimeToGUI: 0
+--- !u!114 &648199813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648199806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeb31926c8e322640a39fa14c22a4c64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTracker: 0
+--- !u!114 &648199814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648199806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb47e659927b7741a44faa6c5ab4bb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &703702802
 GameObject:
   m_ObjectHideFlags: 0
@@ -1457,6 +1484,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3847443359638443765, guid: d685e8be353515e45961413ffedd9393,
+        type: 3}
+      propertyPath: flash
+      value: 
+      objectReference: {fileID: 1846360459912185048, guid: 1a9bca7fe528c2b4ba42e627b0ad9ad4,
+        type: 3}
     - target: {fileID: 3847443359638443766, guid: d685e8be353515e45961413ffedd9393,
         type: 3}
       propertyPath: m_Name

@@ -1,18 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class LighningDestruction : MonoBehaviour
+public class LifeTrackerNyrkki : MonoBehaviour
 {
+    public int lifeTracker;
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(this.gameObject, 0.5f);
+        lifeTracker = 4;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(lifeTracker<2)
+        {
+            SceneManager.LoadScene("NyrkkiDeath");
+        }
     }
+    
 }

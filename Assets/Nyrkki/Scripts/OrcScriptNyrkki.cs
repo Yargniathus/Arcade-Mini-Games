@@ -6,11 +6,13 @@ public class OrcScriptNyrkki : MonoBehaviour
 {
     bool reachedTop;
     bool isjumping;
+   
 
     // Start is called before the first frame update
     void Start()
     {
         isjumping = false;
+        
     }
 
     // Update is called once per frame
@@ -55,6 +57,7 @@ public class OrcScriptNyrkki : MonoBehaviour
             this.gameObject.transform.localScale += new Vector3(OrcSize.x * 1.5f * Time.deltaTime * 3, OrcSize.y * 1.5f * Time.deltaTime * 3, OrcSize.z * 1.5f * Time.deltaTime * 3);
             if (OrcSize.x>7)
             {
+                HitsPlayer();
                 Destroy(this.gameObject);
             }
 
@@ -73,4 +76,12 @@ public class OrcScriptNyrkki : MonoBehaviour
         }
         
     }
+    void HitsPlayer()
+    {
+        GameObject.Find("MainCamera").GetComponent<LifeTrackerNyrkki>().lifeTracker -= 1;
+        int lifeTracker = GameObject.Find("MainCamera").GetComponent<LifeTrackerNyrkki>().lifeTracker;
+        Destroy(GameObject.Find("Heart" + lifeTracker.ToString()));
+        Debug.Log(lifeTracker);
+    }
+
 }
