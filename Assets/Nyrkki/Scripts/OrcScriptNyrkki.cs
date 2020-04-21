@@ -6,7 +6,7 @@ public class OrcScriptNyrkki : MonoBehaviour
 {
     bool reachedTop;
     bool isjumping;
-   
+
 
     // Start is called before the first frame update
     void Start()
@@ -78,8 +78,11 @@ public class OrcScriptNyrkki : MonoBehaviour
     }
     void HitsPlayer()
     {
-        GameObject.Find("MainCamera").GetComponent<LifeTrackerNyrkki>().lifeTracker -= 1;
-        int lifeTracker = GameObject.Find("MainCamera").GetComponent<LifeTrackerNyrkki>().lifeTracker;
+        //remove life
+        var codeStorage = GameObject.Find("MainCamera");
+        codeStorage.GetComponent<LifeTrackerNyrkki>().lifeTracker -= 1;
+        int lifeTracker = codeStorage.GetComponent<LifeTrackerNyrkki>().lifeTracker;
+        codeStorage.GetComponent<BloodInstantiateNyrkki>().OrcHitsPlayer();
         Destroy(GameObject.Find("Heart" + lifeTracker.ToString()));
         Debug.Log(lifeTracker);
     }

@@ -24,10 +24,7 @@ public class OrcHitNyrkki : MonoBehaviour
             //make orc fly off
             GotHit = true;
             StartCoroutine(OrcDestructionCoroutine());
-            //Add score
-            points = PlayerPrefs.GetInt("NyrkkiPoints") + 1;
-            PlayerPrefs.SetInt("NyrkkiPoints", points);
-            Debug.Log(PlayerPrefs.GetInt("NyrkkiPoints"));
+            
             //Destroy orc object
             Destroy(this.gameObject, timeBetweenHitAndDeath);
             
@@ -53,6 +50,11 @@ public class OrcHitNyrkki : MonoBehaviour
     {
        
         yield return new WaitForSeconds(timeBetweenHitAndDeath-0.5f);
+        //Add score
+        points = PlayerPrefs.GetInt("NyrkkiPoints") + 1;
+        PlayerPrefs.SetInt("NyrkkiPoints", points);
+        Debug.Log(PlayerPrefs.GetInt("NyrkkiPoints"));
+        //make bling in the sky
         Instantiate(flash, new Vector3(this.gameObject.GetComponent<Transform>().position.x, this.gameObject.GetComponent<Transform>().position.y), Quaternion.identity);
         
 

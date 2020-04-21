@@ -509,7 +509,7 @@ RectTransform:
   m_LocalScale: {x: 0.31434402, y: 0.31434402, z: 0.31434402}
   m_Children: []
   m_Father: {fileID: 1324073265}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -568,6 +568,7 @@ GameObject:
   - component: {fileID: 648199812}
   - component: {fileID: 648199813}
   - component: {fileID: 648199814}
+  - component: {fileID: 648199815}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -708,6 +709,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb47e659927b7741a44faa6c5ab4bb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &648199815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648199806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a113fa034833114482ffa4294a6a45e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bloodSplatter: {fileID: 4854937594139416649, guid: ad1db89c3bf073c46b6c2d9c4e4d17db,
+    type: 3}
+  canvas: {fileID: 1324073261}
 --- !u!1 &703702802
 GameObject:
   m_ObjectHideFlags: 0
@@ -738,7 +754,7 @@ RectTransform:
   m_LocalScale: {x: 0.31434402, y: 0.31434402, z: 0.31434402}
   m_Children: []
   m_Father: {fileID: 1324073265}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -871,10 +887,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 1960025536}
   - {fileID: 581783492}
   - {fileID: 703702803}
   - {fileID: 1827657997}
+  - {fileID: 1960025536}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1205,7 +1221,7 @@ RectTransform:
   m_LocalScale: {x: 0.31434402, y: 0.31434402, z: 0.31434402}
   m_Children: []
   m_Father: {fileID: 1324073265}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1279,7 +1295,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1324073265}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1495,5 +1511,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: orc
       objectReference: {fileID: 0}
+    - target: {fileID: 3847443359638443768, guid: d685e8be353515e45961413ffedd9393,
+        type: 3}
+      propertyPath: bloodSplatter
+      value: 
+      objectReference: {fileID: 4854937594139416649, guid: ad1db89c3bf073c46b6c2d9c4e4d17db,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d685e8be353515e45961413ffedd9393, type: 3}

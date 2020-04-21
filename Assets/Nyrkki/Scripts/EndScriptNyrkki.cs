@@ -9,7 +9,8 @@ public class EndScriptNyrkki : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        float endScoreNyrkki = PlayerPrefs.GetFloat("NyrkkiPoints");
+        
+        int endScoreNyrkki = PlayerPrefs.GetInt("NyrkkiPoints");
         this.GetComponent<Text>().text = "SCORE: " + endScoreNyrkki.ToString();
     }
 
