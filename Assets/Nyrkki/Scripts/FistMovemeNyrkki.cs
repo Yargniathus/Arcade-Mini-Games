@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Xamk.GymApi;
+using System.Threading;
 
 public class FistMovemeNyrkki : MonoBehaviour
 {
+    private CancellationTokenSource cancelTokenSource;
+    private GymMachineListener gymMachineListener;
     bool LeftMovingUp;
     bool RightMovingUp;
     bool MovingMiddle;
@@ -13,6 +17,11 @@ public class FistMovemeNyrkki : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cancelTokenSource = new CancellationTokenSource();
+        gymMachineListener = new GymMachineListener(HurObject.Machine.OptimalRhomb);
+        gymMachineListener.LeftRepHandler += LeftRepHandler;
+        gymMachineListener.RightRepHandler += RightRepHandler;
+        gymMachineListener.StartListener(cancelTokenSource.Token);
         LeftMovingUp = false;
         RightMovingUp = false;
         MovingMiddle = false;
@@ -21,13 +30,14 @@ public class FistMovemeNyrkki : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            LeftMovingUp = true;
+            gymMachineListener.SimulateLeftRep(1, 20, 500);
         } 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            RightMovingUp = true;
+            gymMachineListener.SimulateRightRep(1, 20, 500);
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
@@ -36,6 +46,14 @@ public class FistMovemeNyrkki : MonoBehaviour
         LeftPunch();
         RightPunch();
         MiddlePunch();
+    }
+    private void LeftRepHandler(object sender, LeftRepEventArgs e)
+    {
+            LeftMovingUp = true;
+    }
+    private void RightRepHandler(object sender, RightRepEventArgs e)
+    {
+        RightMovingUp = true;
     }
 
     void LeftPunch()
@@ -85,6 +103,10 @@ public class FistMovemeNyrkki : MonoBehaviour
             LeftFist.transform.Translate(new Vector3(25f * Time.deltaTime, 0, 0));
             RightFist.transform.Translate(new Vector3(25f * Time.deltaTime, 0, 0));
         }
+    }
+    private void OnDestroy()
+    {
+        if (gymMachineListener != null) cancelTokenSource.Cancel();
     }
 
 

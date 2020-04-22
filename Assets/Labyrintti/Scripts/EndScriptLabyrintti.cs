@@ -24,14 +24,13 @@ public class EndScriptLabyrintti : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            //SceneManager.LoadScene("LabyrinttiRandomLevel");
+           
             gymMachineListener.SimulateRightRep(1, 20, 500);
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             gymMachineListener.SimulateLeftRep(1, 20, 500);
-            //PlayerPrefs.SetInt("LabyrinttiLevel", 1);
-            //SceneManager.LoadScene("MainMenu");
+            
         }
     }
     private void LeftRepHandler(object sender, LeftRepEventArgs e)
