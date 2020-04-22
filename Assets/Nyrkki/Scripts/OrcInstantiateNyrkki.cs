@@ -10,7 +10,7 @@ public class OrcInstantiateNyrkki : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawnInterval = 2.5f;
+        spawnInterval = 3.5f;
     }
 
     // Update is called once per frame

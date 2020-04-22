@@ -37,7 +37,7 @@ public class OrcScriptNyrkki : MonoBehaviour
         if (!reachedTop)
         {
 
-            this.gameObject.transform.Translate(new Vector3(0, 2 * Time.deltaTime));
+            this.gameObject.transform.Translate(new Vector3(0, 4 * Time.deltaTime));
         }
     }
 
@@ -53,6 +53,7 @@ public class OrcScriptNyrkki : MonoBehaviour
             {
                 this.gameObject.transform.Translate(new Vector3(-7 * Time.deltaTime, 0));
             }
+            this.gameObject.transform.Translate(new Vector3(0, -20 * Time.deltaTime ));
             Vector3 OrcSize = this.gameObject.transform.localScale;
             this.gameObject.transform.localScale += new Vector3(OrcSize.x * 1.5f * Time.deltaTime * 3, OrcSize.y * 1.5f * Time.deltaTime * 3, OrcSize.z * 1.5f * Time.deltaTime * 3);
             if (OrcSize.x>7)
