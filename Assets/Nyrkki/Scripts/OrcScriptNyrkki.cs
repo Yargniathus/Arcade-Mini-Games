@@ -6,12 +6,14 @@ public class OrcScriptNyrkki : MonoBehaviour
 {
     bool reachedTop;
     bool isjumping;
-
+    private Animator orcAnimator;
 
     // Start is called before the first frame update
     void Start()
     {
         isjumping = false;
+        orcAnimator = GetComponent<Animator>();
+        orcAnimator.SetBool("OrcAnimatorIsClimbing", true);
         
     }
 
@@ -45,6 +47,7 @@ public class OrcScriptNyrkki : MonoBehaviour
     {
         if (isjumping)
         {
+            orcAnimator.SetBool("OrcAnimatorIsAttacking", true);
             if (this.gameObject.GetComponent<Transform>().position.x <0)
             {
                 this.gameObject.transform.Translate(new Vector3(7 * Time.deltaTime, 0));
@@ -68,6 +71,8 @@ public class OrcScriptNyrkki : MonoBehaviour
     {
 
         this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        orcAnimator.SetBool("OrcAnimatorIsClimbing", false);
+        orcAnimator.SetBool("OrcAnimatorIsPreparing", true);
         yield return new WaitForSeconds(1);
         this.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 60;
         var hitCheck = this.gameObject.GetComponent<OrcHitNyrkki>();

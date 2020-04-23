@@ -8,10 +8,12 @@ public class OrcHitNyrkki : MonoBehaviour
     public GameObject flash;
     private float timeBetweenHitAndDeath = 3f;
     private int points;
+    private Animator orcAnimator;
     // Start is called before the first frame update
     void Start()
     {
-        
+        orcAnimator = GetComponent<Animator>();
+        orcAnimator.SetBool("OrcAnimatorIsDead", false);
     }
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -37,6 +39,7 @@ public class OrcHitNyrkki : MonoBehaviour
 
         if (GotHit)
         {
+            orcAnimator.SetBool("OrcAnimatorIsDead", true);
             Vector3 OrcSize = this.gameObject.transform.localScale;
             this.gameObject.transform.Translate(0, 1f * Time.deltaTime, 0, Space.World);
             this.gameObject.transform.Translate(0, 0.5f * Time.deltaTime, 0);
