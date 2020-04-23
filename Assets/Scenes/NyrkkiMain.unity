@@ -1505,5 +1505,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: orc
       objectReference: {fileID: 0}
+    - target: {fileID: 3847443359638443767, guid: d685e8be353515e45961413ffedd9393,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3847443359638443767, guid: d685e8be353515e45961413ffedd9393,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3847443359638443767, guid: d685e8be353515e45961413ffedd9393,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d685e8be353515e45961413ffedd9393, type: 3}

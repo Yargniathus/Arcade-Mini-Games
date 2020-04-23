@@ -9,9 +9,27 @@ public class OrcHitNyrkki : MonoBehaviour
     private float timeBetweenHitAndDeath = 3f;
     private int points;
     private Animator orcAnimator;
+    private int orcHP;
+    Color orcColor;
     // Start is called before the first frame update
     void Start()
     {
+        orcHP = Random.Range(1, 600);
+       if(orcHP<400)
+        {
+            orcColor = new Color(0.6155064f, 1, 0.5613208f);
+        }else
+        {
+            if (orcHP>549)
+            {
+                orcColor = new Color(1f, 0.645642f, 0.5607843f);
+            }
+            else
+            {
+                orcColor = new Color(1, 0.940287f, 0.511f);
+            }
+        }
+        GetComponent<SpriteRenderer>().color = orcColor;
         orcAnimator = GetComponent<Animator>();
         orcAnimator.SetBool("OrcAnimatorIsDead", false);
     }

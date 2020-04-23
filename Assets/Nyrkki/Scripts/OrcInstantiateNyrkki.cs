@@ -7,13 +7,10 @@ public class OrcInstantiateNyrkki : MonoBehaviour
     private float time;
     private float spawnInterval;
     public GameObject Orc;
-    // Start is called before the first frame update
     void Start()
     {
         spawnInterval = 3.5f;
     }
-
-    // Update is called once per frame
     void Update()
     {
         time += Time.deltaTime;

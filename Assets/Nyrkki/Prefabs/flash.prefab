@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6459839308907935752}
   - component: {fileID: 8081005701961452181}
   m_Layer: 0
-  m_Name: hiclipart.com
+  m_Name: flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1846360459912185048}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.66, y: 2.64, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.122518316, y: 0.122518316, z: 0.122518316}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 50
-  m_Sprite: {fileID: 21300000, guid: 03477ad8e7123554e95a3590bce3d7fa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 15cc86b0369e0eb4e9c98942ae02a196, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
