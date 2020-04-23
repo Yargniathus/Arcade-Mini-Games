@@ -39,6 +39,7 @@ public class OrcHitNyrkki : MonoBehaviour
 
         if (GotHit)
         {
+            this.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 5;
             orcAnimator.SetBool("OrcAnimatorIsDead", true);
             Vector3 OrcSize = this.gameObject.transform.localScale;
             this.gameObject.transform.Translate(0, 1f * Time.deltaTime, 0, Space.World);

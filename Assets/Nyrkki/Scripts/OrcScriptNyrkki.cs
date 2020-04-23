@@ -7,6 +7,7 @@ public class OrcScriptNyrkki : MonoBehaviour
     bool reachedTop;
     bool isjumping;
     private Animator orcAnimator;
+    private float jumpingDownSpeed = 6f;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,7 @@ public class OrcScriptNyrkki : MonoBehaviour
     {
         if (this.gameObject.GetComponent<Transform>().position.y >= 2)
         {
-            reachedTop = true;
+            reachedTop = true; 
             StartCoroutine(JumpingStartCoroutine());
         }
 
@@ -32,6 +33,7 @@ public class OrcScriptNyrkki : MonoBehaviour
         }
         ClimbingUp();
         JumpingAtPlayer();
+        JumpDownFromLadder();
     }
 
     void ClimbingUp()
@@ -47,6 +49,7 @@ public class OrcScriptNyrkki : MonoBehaviour
     {
         if (isjumping)
         {
+            this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
             orcAnimator.SetBool("OrcAnimatorIsAttacking", true);
             if (this.gameObject.GetComponent<Transform>().position.x <0)
             {
@@ -70,11 +73,12 @@ public class OrcScriptNyrkki : MonoBehaviour
     IEnumerator JumpingStartCoroutine()
     {
 
-        this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        
         orcAnimator.SetBool("OrcAnimatorIsClimbing", false);
-        orcAnimator.SetBool("OrcAnimatorIsPreparing", true);
-        yield return new WaitForSeconds(1);
+        orcAnimator.SetBool("OrcAnimatorIsPreparing", true);  
         this.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 60;
+        yield return new WaitForSeconds(1);
+      
         var hitCheck = this.gameObject.GetComponent<OrcHitNyrkki>();
         if (!hitCheck.GotHit)
         {
@@ -91,6 +95,24 @@ public class OrcScriptNyrkki : MonoBehaviour
         codeStorage.GetComponent<BloodInstantiateNyrkki>().OrcHitsPlayer();
         Destroy(GameObject.Find("Heart" + lifeTracker.ToString()));
         Debug.Log(lifeTracker);
+    }
+    void JumpDownFromLadder()
+    {
+        if (!reachedTop)
+        {
+            return;
+        }
+        else
+        {
+            
+
+            if (gameObject.GetComponent<Transform>().position.y > 0)
+            {
+                    gameObject.transform.Translate(new Vector3(0, -jumpingDownSpeed * Time.deltaTime));          
+            }
+            
+
+        }
     }
 
 }
