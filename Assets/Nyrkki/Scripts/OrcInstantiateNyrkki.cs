@@ -9,7 +9,7 @@ public class OrcInstantiateNyrkki : MonoBehaviour
     public GameObject Orc;
     void Start()
     {
-        spawnInterval = 3.5f;
+        spawnInterval = 1.5f;
     }
     void Update()
     {
