@@ -21,7 +21,6 @@ public class RandomTileLabyrintti : MonoBehaviour
     public static Tile EmptyTile;
     private int yValue;
     private int xValue;
-    public Tile TileToBePlaced;
     public Tile LastPlacedTile;
     private int leftEdgeValue;
     private int rightEdgeValue;
@@ -47,10 +46,10 @@ public class RandomTileLabyrintti : MonoBehaviour
     {
         if ( allTilesGenerated!=true)
         {
-            RandomizePiece();
+            var tile = GetNextTile();
             WaterTileMap.SetTile(new Vector3Int(xValue, yValue, 0), null);
-            GroundTileMap.SetTile(new Vector3Int(xValue, yValue, 0), TileToBePlaced);           
-            LastPlacedTile = TileToBePlaced;
+            GroundTileMap.SetTile(new Vector3Int(xValue, yValue, 0), tile);           
+            LastPlacedTile = tile;
             if (LastPlacedTile==VerticalTile || LastPlacedTile == LeftToDownTile || LastPlacedTile == RightToDownTile)
             {
                 yValue -= 1;
@@ -70,12 +69,12 @@ public class RandomTileLabyrintti : MonoBehaviour
             {
                 xValue += 1;
             }
-                
-          
         }
     }
-    private void RandomizePiece()
+    private Tile GetNextTile()
     {
+        Tile tileToBePlaced = EmptyTile;
+
         if (LastPlacedTile==EmptyTile || LastPlacedTile == VerticalTile || LastPlacedTile == LeftToDownTile || LastPlacedTile == RightToDownTile)
         {
             if (xValue < rightEdgeValue && xValue > leftEdgeValue)
@@ -84,22 +83,22 @@ public class RandomTileLabyrintti : MonoBehaviour
                 switch (rnd)
                 {
                     case 1:
-                        TileToBePlaced = VerticalTile;
+                        tileToBePlaced = VerticalTile;
                         break;
 
                     case 2:
                         if (LastPlacedTile != LeftToDownTile)
                         {
-                            TileToBePlaced = DownToLeftTile;
+                            tileToBePlaced = DownToLeftTile;
                         }
-                        else { TileToBePlaced = VerticalTile; }
+                        else { tileToBePlaced = VerticalTile; }
                         break;
                     case 3:
                         if (LastPlacedTile != RightToDownTile)
                         {
-                            TileToBePlaced = DownToRightTile;
+                            tileToBePlaced = DownToRightTile;
                         }
-                        else { TileToBePlaced = VerticalTile; }
+                        else { tileToBePlaced = VerticalTile; }
                         break;
                 }
             }
@@ -109,32 +108,34 @@ public class RandomTileLabyrintti : MonoBehaviour
                 switch (rnd)
                 {
                     case 1:
-                        TileToBePlaced = VerticalTile;
+                        tileToBePlaced = VerticalTile;
                         break;
                     case 2:
                         if (LastPlacedTile == EmptyTile || LastPlacedTile == VerticalTile)
                         {
-                            TileToBePlaced = DownToLeftTile;
+                            tileToBePlaced = DownToLeftTile;
                         }
-                        else TileToBePlaced = VerticalTile;
+                        else tileToBePlaced = VerticalTile;
                         break;
                 }
             } else { int rnd = Random.Range(1, 3);
             switch (rnd)
                 {
                     case 1:
-                    TileToBePlaced = VerticalTile;
+                        tileToBePlaced = VerticalTile;
                     break;
 
                     case 2:
                         if (LastPlacedTile == EmptyTile || LastPlacedTile == VerticalTile)
                         {
-                            TileToBePlaced = DownToRightTile;
+                            tileToBePlaced = DownToRightTile;
                         }
-                        else TileToBePlaced = VerticalTile;
+                        else tileToBePlaced = VerticalTile;
                     break;
                 }
-                    }
+
+            }
+
         }
         if (LastPlacedTile == HorizontalRightToLeft || LastPlacedTile == DownToLeftTile)
         {
@@ -145,19 +146,18 @@ public class RandomTileLabyrintti : MonoBehaviour
                 switch (rnd)
                 {
                     case 1:
-                        TileToBePlaced = HorizontalRightToLeft;
+                        tileToBePlaced = HorizontalRightToLeft;
                         break;
 
                     case 2:
-                        TileToBePlaced = RightToDownTile;
+                        tileToBePlaced = RightToDownTile;
                         break;
                 }
             }
-            else { TileToBePlaced = RightToDownTile; }
+            else { tileToBePlaced = RightToDownTile; }
         }
         if (LastPlacedTile == HorizontalLeftToRight || LastPlacedTile == DownToRightTile)
         {
-            
             if (xValue < rightEdgeValue)
             {
                 
@@ -165,18 +165,17 @@ public class RandomTileLabyrintti : MonoBehaviour
                 switch (rnd)
                 {
                     case 1:
-                        TileToBePlaced = HorizontalLeftToRight;
+                        tileToBePlaced = HorizontalLeftToRight;
                         break;
 
                     case 2:
-                        TileToBePlaced = LeftToDownTile;
+                        tileToBePlaced = LeftToDownTile;
                         break;
                 }
             }
-            else { TileToBePlaced = LeftToDownTile; }
+            else { tileToBePlaced = LeftToDownTile; }
         }
 
+        return tileToBePlaced;
     }
-
-
 }

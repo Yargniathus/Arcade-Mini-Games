@@ -24,6 +24,11 @@ public class MovementScriptLabyrintti : MonoBehaviour
     private CancellationTokenSource cancelTokenSource;
     private GymMachineListener gymMachineListener;
 
+    private bool isTimerRunnig = false;
+    private bool isLeftRep = false;
+    private bool isRightRep = false;
+    private float combinedPullTimeDelay = 0.350f;
+
     private void Start()
     {
         movement = false;
@@ -43,18 +48,24 @@ public class MovementScriptLabyrintti : MonoBehaviour
 
     private void LeftRepHandler(object sender, LeftRepEventArgs e)
     {
-        if(movement)
+        isLeftRep = true;
+
+        if (movement)
             return;
 
-        PlayerMovement(MovementDirection.Left);
+        isTimerRunnig = true;
+       // PlayerMovement(MovementDirection.Left);
     }
 
     private void RightRepHandler(object sender, RightRepEventArgs e)
     {
+        isRightRep = true;
+
         if (movement)
             return;
 
-        PlayerMovement(MovementDirection.Right);
+        isTimerRunnig = true;
+      //  PlayerMovement(MovementDirection.Right);
     }
 
     private enum MovementDirection { Left, Down, Right }
@@ -92,6 +103,8 @@ public class MovementScriptLabyrintti : MonoBehaviour
         MovementHandling();
     }
 
+
+    private float targetTime = 0f;
     // Move to the target end position.
     private void Update()
     {
@@ -115,9 +128,39 @@ public class MovementScriptLabyrintti : MonoBehaviour
                 } 
             }
 
+            if (isTimerRunnig)
+            {
+                targetTime += Time.deltaTime;
+
+                if (targetTime >= combinedPullTimeDelay)
+                {
+                    movement = true;
+                    PlayerMovement(isLeftRep ? MovementDirection.Left : MovementDirection.Right);
+                    ResetMovementVariables();
+                }
+
+                if (isLeftRep && isRightRep)
+                {
+                    movement = true;
+                    PlayerMovement(MovementDirection.Down);
+                    ResetMovementVariables();
+
+                }
+            }
+
             MovementHandling();
         }
     }
+
+    private void ResetMovementVariables()
+    {
+        isTimerRunnig = false;
+        isLeftRep = false;
+        isRightRep = false;
+        //movement = false;
+        targetTime = 0f;
+    }
+
 
     private void MovementHandling()
     {
