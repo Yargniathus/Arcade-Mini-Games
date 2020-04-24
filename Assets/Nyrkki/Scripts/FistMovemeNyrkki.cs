@@ -46,6 +46,7 @@ public class FistMovemeNyrkki : MonoBehaviour
         LeftPunch();
         RightPunch();
         MiddlePunch();
+        FistAnimationController();
     }
     private void LeftRepHandler(object sender, LeftRepEventArgs e)
     {
@@ -102,6 +103,19 @@ public class FistMovemeNyrkki : MonoBehaviour
         {
             LeftFist.transform.Translate(new Vector3(25f * Time.deltaTime, 0, 0));
             RightFist.transform.Translate(new Vector3(25f * Time.deltaTime, 0, 0));
+        }
+    }
+    void FistAnimationController()
+    {
+        if (LeftFist.GetComponent<Transform>().position.x > -4)
+        {
+            LeftFist.GetComponent<Animator>().SetBool("FistIsOnSide", false);
+            RightFist.GetComponent<Animator>().SetBool("FistIsOnSide", false);
+        }
+        else
+        {
+            LeftFist.GetComponent<Animator>().SetBool("FistIsOnSide", true);
+            RightFist.GetComponent<Animator>().SetBool("FistIsOnSide", true);
         }
     }
     private void OnDestroy()
