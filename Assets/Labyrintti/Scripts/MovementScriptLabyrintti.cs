@@ -54,7 +54,6 @@ public class MovementScriptLabyrintti : MonoBehaviour
             return;
 
         isTimerRunnig = true;
-       // PlayerMovement(MovementDirection.Left);
     }
 
     private void RightRepHandler(object sender, RightRepEventArgs e)
@@ -65,7 +64,6 @@ public class MovementScriptLabyrintti : MonoBehaviour
             return;
 
         isTimerRunnig = true;
-      //  PlayerMovement(MovementDirection.Right);
     }
 
     private enum MovementDirection { Left, Down, Right }

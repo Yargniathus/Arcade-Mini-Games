@@ -14,6 +14,14 @@ public class FistMovemeNyrkki : MonoBehaviour
     public GameObject LeftFist;
     public GameObject RightFist;
     public GameObject Lightning;
+
+
+    private bool isTimerRunnig = false;
+    private float combinedPullTimeDelay = 0.350f;
+    private float targetTime = 0f;
+    private bool isLeftRep = false;
+    private bool isRightRep = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,14 +55,42 @@ public class FistMovemeNyrkki : MonoBehaviour
         RightPunch();
         MiddlePunch();
         FistAnimationController();
+
+        HandleRepetitionLogic();
     }
+
+    private void HandleRepetitionLogic()
+    {
+        if (isTimerRunnig)
+        {
+            targetTime += Time.deltaTime;
+
+            if (targetTime >= combinedPullTimeDelay)
+            {
+                RightMovingUp = isRightRep;
+                LeftMovingUp = isLeftRep;
+                isTimerRunnig = false;
+                targetTime = 0;
+            }
+
+            if (isLeftRep && isRightRep)
+            {
+                MovingMiddle = true;
+                isTimerRunnig = false;
+                targetTime = 0;
+            }
+        }
+    }
+
     private void LeftRepHandler(object sender, LeftRepEventArgs e)
     {
-            LeftMovingUp = true;
+        isTimerRunnig = true;
+        isLeftRep = true;
     }
     private void RightRepHandler(object sender, RightRepEventArgs e)
     {
-        RightMovingUp = true;
+        isTimerRunnig = true;
+        isRightRep = true;
     }
 
     void LeftPunch()
@@ -66,6 +102,7 @@ public class FistMovemeNyrkki : MonoBehaviour
         if (LeftFist.GetComponent<Transform>().position.y >= 0.5)
         {
             LeftMovingUp = false;
+            isLeftRep = false;
         }
         if (LeftMovingUp == false && LeftFist.GetComponent<Transform>().position.y > -3.5)
         {
@@ -81,6 +118,7 @@ public class FistMovemeNyrkki : MonoBehaviour
         if (RightFist.GetComponent<Transform>().position.y >= 0.5)
         {
             RightMovingUp = false;
+            isRightRep = false;
         }
         if (RightMovingUp == false && RightFist.GetComponent<Transform>().position.y > -3.5)
         {
@@ -98,6 +136,8 @@ public class FistMovemeNyrkki : MonoBehaviour
         {
             Instantiate(Lightning, new Vector3(0, 2, 0), Quaternion.identity);
             MovingMiddle = false;
+            isLeftRep = false;
+            isRightRep = false;
         }
         if (MovingMiddle == false && LeftFist.GetComponent<Transform>().position.x > -5)
         {
