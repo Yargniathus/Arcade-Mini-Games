@@ -6,7 +6,7 @@ public class OrcHitNyrkki : MonoBehaviour
 {
     public bool GotHit = false;
     public GameObject flash;
-    private float timeBetweenHitAndDeath = 3f;
+    private float timeBetweenHitAndDeath = 1.3f;
     private int points;
     private Animator orcAnimator;
     private int orcHP;
@@ -64,7 +64,7 @@ public class OrcHitNyrkki : MonoBehaviour
             this.gameObject.transform.Translate(0, 1f * Time.deltaTime, 0, Space.World);
             this.gameObject.transform.Translate(0, 0.5f * Time.deltaTime, 0);
             this.gameObject.transform.Rotate(0, 0, 360f * Time.deltaTime);            
-            this.gameObject.transform.localScale -= new Vector3(OrcSize.x*0.9999f*Time.deltaTime*3, OrcSize.y * 0.9999f * Time.deltaTime*3, OrcSize.z * 0.9999f * Time.deltaTime*3 );
+            this.gameObject.transform.localScale -= new Vector3(OrcSize.x*0.9999f*Time.deltaTime*4, OrcSize.y * 0.9999f * Time.deltaTime*4, OrcSize.z * 0.9999f * Time.deltaTime*4 );
 
            
         }
@@ -72,7 +72,7 @@ public class OrcHitNyrkki : MonoBehaviour
     IEnumerator OrcDestructionCoroutine()
     {
        
-        yield return new WaitForSeconds(timeBetweenHitAndDeath-0.5f);
+        yield return new WaitForSeconds(timeBetweenHitAndDeath-0.1f);
         //Add score
         points = PlayerPrefs.GetInt("NyrkkiPoints") + 1;
         PlayerPrefs.SetInt("NyrkkiPoints", points);
