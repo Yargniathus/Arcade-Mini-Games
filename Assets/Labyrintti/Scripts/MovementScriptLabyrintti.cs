@@ -48,57 +48,65 @@ public class MovementScriptLabyrintti : MonoBehaviour
 
     private void LeftRepHandler(object sender, LeftRepEventArgs e)
     {
-        isLeftRep = true;
+        if (GameObject.Find("Pimennys").GetComponent<DarknessScriptLabyrintti>().startGameTimer < 0)
+        {
+            isLeftRep = true;
 
-        if (movement)
-            return;
+            if (movement)
+                return;
 
-        isTimerRunnig = true;
+            isTimerRunnig = true;
+        }
     }
 
     private void RightRepHandler(object sender, RightRepEventArgs e)
     {
-        isRightRep = true;
+        if (GameObject.Find("Pimennys").GetComponent<DarknessScriptLabyrintti>().startGameTimer < 0)
+        {
+            isRightRep = true;
 
-        if (movement)
-            return;
+            if (movement)
+                return;
 
-        isTimerRunnig = true;
+            isTimerRunnig = true;
+        }
     }
 
     private enum MovementDirection { Left, Down, Right }
 
     private void PlayerMovement(MovementDirection direction)
     {
-        int x = 0;
-        int y = 0;
-        string animationBool = "MovingLeft";
+        
+            int x = 0;
+            int y = 0;
+            string animationBool = "MovingLeft";
 
-        if (direction == MovementDirection.Left)
-        {
-            x = -1;
-            animationBool = "MovingLeft";
-        }
-        else if (direction == MovementDirection.Right)
-        {
-            x = 1;
-            animationBool = "MovingRight";
-        }
+            if (direction == MovementDirection.Left)
+            {
+                x = -1;
+                animationBool = "MovingLeft";
+            }
+            else if (direction == MovementDirection.Right)
+            {
+                x = 1;
+                animationBool = "MovingRight";
+            }
 
-        if (direction == MovementDirection.Down)
-        {
-            y = -1;
-            animationBool = "MovingDown";
-        }
+            if (direction == MovementDirection.Down)
+            {
+                y = -1;
+                animationBool = "MovingDown";
+            }
 
 
-        startTime = Time.time;
-        startMarker = new Vector2(transform.position.x, transform.position.y);
-        endMarker = new Vector2(transform.position.x + x, transform.position.y + y);
-        movement = true;
-        LabyrinttiJonesAnimator.SetBool(animationBool, true);
-        LabyrinttiJonesAnimator.SetInteger("LastMovementDirection", (int)direction);
-        MovementHandling();
+            startTime = Time.time;
+            startMarker = new Vector2(transform.position.x, transform.position.y);
+            endMarker = new Vector2(transform.position.x + x, transform.position.y + y);
+            movement = true;
+            LabyrinttiJonesAnimator.SetBool(animationBool, true);
+            LabyrinttiJonesAnimator.SetInteger("LastMovementDirection", (int)direction);
+            MovementHandling();
+        
     }
 
 
@@ -112,7 +120,10 @@ public class MovementScriptLabyrintti : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.DownArrow))
                 {
-                    PlayerMovement(MovementDirection.Down);
+                    if (GameObject.Find("Pimennys").GetComponent<DarknessScriptLabyrintti>().startGameTimer < 0)
+                    {
+                        PlayerMovement(MovementDirection.Down);
+                    }
                 }
 
                 if (Input.GetKeyDown(KeyCode.LeftArrow))

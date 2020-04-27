@@ -7,7 +7,7 @@ public class DarknessScriptLabyrintti : MonoBehaviour
 {
     // Start is called before the first frame update 
     float opacityTimer = 0;
-    float startGameTimer = 5;
+    public float startGameTimer = 5;
     GameObject darknessLabyrintti;
     GameObject timeUntilDarkness;
     bool lightIncreasing = true;
