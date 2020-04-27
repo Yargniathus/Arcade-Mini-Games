@@ -2,18 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Xamk.GymApi;
+using System.Threading;
 
 public class GameStartLabyrintti : MonoBehaviour
 {
     public static bool LabyrinttiGameStarted;
     GameObject instructions;
     GameObject instructionScreen;
+    private CancellationTokenSource cancelTokenSource;
+    private GymMachineListener gymMachineListener;
     // Start is called before the first frame update
     void Start()
     {
         LabyrinttiGameStarted = false;
         this.instructions = GameObject.Find("Instructions");
         this.instructionScreen = GameObject.Find("InstructionScreen");
+        cancelTokenSource = new CancellationTokenSource();
+        gymMachineListener = new GymMachineListener(HurObject.Machine.OptimalRhomb);
+        gymMachineListener.LeftRepHandler += LeftRepHandler;
+        gymMachineListener.RightRepHandler += RightRepHandler;
+        gymMachineListener.StartListener(cancelTokenSource.Token);
     }
 
     // Update is called once per frame
@@ -22,14 +31,28 @@ public class GameStartLabyrintti : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
 
-            StartCoroutine(ExecuteAfterTime());
+            gymMachineListener.SimulateLeftRep(1, 20, 500);
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
 
-            StartCoroutine(ExecuteAfterTime());
+            gymMachineListener.SimulateRightRep(1, 20, 500);
         }
 
+    }
+    private void LeftRepHandler(object sender, LeftRepEventArgs e)
+    {
+        StartCoroutine(ExecuteAfterTime());
+    }
+
+    private void RightRepHandler(object sender, RightRepEventArgs e)
+    {
+        StartCoroutine(ExecuteAfterTime());
+    }
+
+    private void OnDestroy()
+    {
+        if (gymMachineListener != null) cancelTokenSource.Cancel();
     }
 
     IEnumerator ExecuteAfterTime()
