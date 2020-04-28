@@ -38,7 +38,6 @@ public class FistMovemeNyrkki : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             gymMachineListener.SimulateLeftRep(1, 20, 500);
@@ -82,8 +81,12 @@ public class FistMovemeNyrkki : MonoBehaviour
         }
     }
 
+    private double leftLoad = 0;
+
     private void LeftRepHandler(object sender, LeftRepEventArgs e)
     {
+        leftLoad = e.Load;
+
         isTimerRunnig = true;
         isLeftRep = true;
     }
