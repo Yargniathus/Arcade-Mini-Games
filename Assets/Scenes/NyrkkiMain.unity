@@ -328,7 +328,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 30
-  m_Sprite: {fileID: 21300000, guid: 154d7c469f7987d45811d07892fa329d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8142581e5c3ead0419a572edae434a90, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -347,8 +347,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 98349060}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.2, y: -5.84, z: 0}
-  m_LocalScale: {x: 3.9542823, y: 3.9542823, z: 3.9542823}
+  m_LocalPosition: {x: -0.12, y: -5.3, z: 0}
+  m_LocalScale: {x: 1.813671, y: 1.813671, z: 1.813671}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -678,6 +678,7 @@ MonoBehaviour:
   RightFist: {fileID: 84347648}
   Lightning: {fileID: 1372671022663871683, guid: f37d0d05037cb874098301662ab20225,
     type: 3}
+  PunchPower: 0
 --- !u!114 &648199811
 MonoBehaviour:
   m_ObjectHideFlags: 0

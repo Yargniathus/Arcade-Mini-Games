@@ -22,13 +22,15 @@ public class OrcScriptNyrkki : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //reaches top, jumps down
         if (this.gameObject.GetComponent<Transform>().position.y >= 2)
         {
             reachedTop = true; 
             StartCoroutine(JumpingStartCoroutine());
         }
 
-        if (this.gameObject.GetComponent<Transform>().position.y >=0 && !isjumping)
+        //makes orc hittable
+        if (this.gameObject.GetComponent<Transform>().position.y >=-1 && !isjumping)
         {
             this.gameObject.GetComponent<BoxCollider2D>().enabled = true;
         }

@@ -104,7 +104,7 @@ public class OrcHitNyrkki : MonoBehaviour
         orcAnimator.SetBool("OrcAnimatorIsDead", true);
         yield return new WaitForSeconds(0.1F);
         GotHit = false;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         IsRecovering = false;
         orcAnimator.SetBool("OrcAnimatorIsDead", false);
 
