@@ -21,6 +21,10 @@ public class FistMovemeNyrkki : MonoBehaviour
     private float targetTime = 0f;
     private bool isLeftRep = false;
     private bool isRightRep = false;
+    private double leftPower = 0;
+    private double rightPower = 0;
+    private double middlePower = 0;
+    public double PunchPower;
 
     // Start is called before the first frame update
     void Start()
@@ -81,23 +85,28 @@ public class FistMovemeNyrkki : MonoBehaviour
         }
     }
 
-    private double leftLoad = 0;
+    
 
     private void LeftRepHandler(object sender, LeftRepEventArgs e)
     {
-        leftLoad = e.Load;
+        leftPower = e.Power;
 
         isTimerRunnig = true;
         isLeftRep = true;
+        PunchPower = leftPower;
     }
     private void RightRepHandler(object sender, RightRepEventArgs e)
     {
+        rightPower = e.Power;
         isTimerRunnig = true;
         isRightRep = true;
+        PunchPower = rightPower;
     }
 
     void LeftPunch()
     {
+        
+
         if (LeftFist.GetComponent<Transform>().position.y < 0.5 && LeftMovingUp == true)
         {
             LeftFist.transform.Translate(new Vector3(0, 25f * Time.deltaTime, 0));
@@ -114,6 +123,7 @@ public class FistMovemeNyrkki : MonoBehaviour
     }
     void RightPunch()
     {
+       
         if (RightFist.GetComponent<Transform>().position.y < 0.5 && RightMovingUp == true)
         {
             RightFist.transform.Translate(new Vector3(0, 25f * Time.deltaTime, 0));
@@ -130,6 +140,8 @@ public class FistMovemeNyrkki : MonoBehaviour
     }
     void MiddlePunch()
     {
+        
+       
         if (LeftFist.GetComponent<Transform>().position.x < -1 && MovingMiddle == true)
         {
             LeftFist.transform.Translate(new Vector3(-25f * Time.deltaTime,0,  0));
@@ -137,6 +149,9 @@ public class FistMovemeNyrkki : MonoBehaviour
         }
         if (LeftFist.GetComponent<Transform>().position.x >= -1)
         {
+            middlePower = (leftPower + rightPower) / 2;
+            PunchPower = middlePower;
+            Debug.Log(middlePower);
             Instantiate(Lightning, new Vector3(0, 2, 0), Quaternion.identity);
             MovingMiddle = false;
             isLeftRep = false;

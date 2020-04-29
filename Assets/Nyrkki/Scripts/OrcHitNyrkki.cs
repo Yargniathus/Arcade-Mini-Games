@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class OrcHitNyrkki : MonoBehaviour
 {
+    public bool IsRecovering = false;
     public bool GotHit = false;
     public GameObject flash;
     private float timeBetweenHitAndDeath = 1.3f;
     private int points;
     private Animator orcAnimator;
     private int orcHP;
+    public bool isDying;
     Color orcColor;
     // Start is called before the first frame update
     void Start()
     {
-        orcHP = Random.Range(1, 600);
+        orcHP = Random.Range(1, 800);
 
         orcAnimator = GetComponent<Animator>();
         orcAnimator.SetBool("OrcAnimatorIsDead", false);
@@ -26,13 +28,27 @@ public class OrcHitNyrkki : MonoBehaviour
         {
             //prevent multiple collisions
             if (GotHit)
-            { return; }            
+            { return; }
+
             //make orc fly off
+            orcHP -= (int)GameObject.Find("MainCamera").GetComponent<FistMovemeNyrkki>().PunchPower;
             GotHit = true;
-            StartCoroutine(OrcDestructionCoroutine());
-            
-            //Destroy orc object
-            Destroy(this.gameObject, timeBetweenHitAndDeath);
+            Debug.Log("HP:" + orcHP);
+
+            if (orcHP<1)
+            {
+                isDying = true;
+                StartCoroutine(OrcDestructionCoroutine());
+
+                //Destroy orc object
+                Destroy(this.gameObject, timeBetweenHitAndDeath);
+            }
+            if (orcHP>0)
+            {
+                StartCoroutine(OrcIsHitCoroutine());
+            }
+           
+
             
         }
 
@@ -56,7 +72,7 @@ public class OrcHitNyrkki : MonoBehaviour
             }
         }
         GetComponent<SpriteRenderer>().color = orcColor;
-        if (GotHit)
+        if (GotHit && isDying )
         {
             this.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 5;
             orcAnimator.SetBool("OrcAnimatorIsDead", true);
@@ -82,4 +98,17 @@ public class OrcHitNyrkki : MonoBehaviour
         
 
     }
+    IEnumerator OrcIsHitCoroutine()
+    {
+        IsRecovering = true;
+        orcAnimator.SetBool("OrcAnimatorIsDead", true);
+        yield return new WaitForSeconds(0.1F);
+        GotHit = false;
+        yield return new WaitForSeconds(3f);
+        IsRecovering = false;
+        orcAnimator.SetBool("OrcAnimatorIsDead", false);
+
+
+    }
+
 }

@@ -8,6 +8,7 @@ public class OrcScriptNyrkki : MonoBehaviour
     bool isjumping;
     private Animator orcAnimator;
     private float jumpingDownSpeed = 6f;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +39,7 @@ public class OrcScriptNyrkki : MonoBehaviour
 
     void ClimbingUp()
     {
-        if (!reachedTop)
+        if (!reachedTop && !GetComponent<OrcHitNyrkki>().IsRecovering)
         {
 
             this.gameObject.transform.Translate(new Vector3(0, 4 * Time.deltaTime));
@@ -47,7 +48,7 @@ public class OrcScriptNyrkki : MonoBehaviour
 
     void JumpingAtPlayer()
     {
-        if (isjumping)
+        if (isjumping && !GetComponent<OrcHitNyrkki>().IsRecovering)
         {
             this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
             orcAnimator.SetBool("OrcAnimatorIsAttacking", true);
@@ -80,7 +81,7 @@ public class OrcScriptNyrkki : MonoBehaviour
         yield return new WaitForSeconds(1);
       
         var hitCheck = this.gameObject.GetComponent<OrcHitNyrkki>();
-        if (!hitCheck.GotHit)
+        if (!hitCheck.isDying)
         {
             isjumping = true;
         }
