@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GauntletForward
+  m_Name: torch
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -19,8 +19,14 @@ AnimationClip:
   m_FloatCurves: []
   m_PPtrCurves:
   - curve:
-    - time: 0
-      value: {fileID: 2551988668041817520, guid: a1b6d8a8b7f8f04458ca32e2f50b6628,
+    - time: 0.016666668
+      value: {fileID: 1191928216394597300, guid: 346100721e94b6348a7b4d28a166caa0,
+        type: 3}
+    - time: 0.23333333
+      value: {fileID: -4993346608224058333, guid: 346100721e94b6348a7b4d28a166caa0,
+        type: 3}
+    - time: 0.43333334
+      value: {fileID: 1191928216394597300, guid: 346100721e94b6348a7b4d28a166caa0,
         type: 3}
     attribute: m_Sprite
     path: 
@@ -41,13 +47,15 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 2551988668041817520, guid: a1b6d8a8b7f8f04458ca32e2f50b6628, type: 3}
+    - {fileID: 1191928216394597300, guid: 346100721e94b6348a7b4d28a166caa0, type: 3}
+    - {fileID: -4993346608224058333, guid: 346100721e94b6348a7b4d28a166caa0, type: 3}
+    - {fileID: 1191928216394597300, guid: 346100721e94b6348a7b4d28a166caa0, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.016666668
+    m_StopTime: 0.45000002
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
