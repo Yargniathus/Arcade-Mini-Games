@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7754152147855671921}
   - component: {fileID: 129941326}
   - component: {fileID: 129941325}
+  - component: {fileID: 756647195}
   m_Layer: 0
   m_Name: norppa
   m_TagString: Untagged
@@ -131,3 +132,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 0.66023254}
   m_EdgeRadius: 0
+--- !u!114 &756647195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7754152147855671920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b7a0d440f07f24bba0b537b437b4db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SealReachedTop: 0
+  SealIsGoingDown: 0

@@ -22,7 +22,7 @@ public class TimerNyrkki : MonoBehaviour
     void Update()
     {
         Timer += Time.deltaTime;
-        TimeToGUI = 30-Timer;
+        TimeToGUI = 40-Timer;
         this.timeText.GetComponent<Text>().text = "Time: " + this.TimeToGUI.ToString("0");
         if (TimeToGUI<=0)
         {
