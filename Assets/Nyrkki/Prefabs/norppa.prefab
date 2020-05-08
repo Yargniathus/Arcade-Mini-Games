@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 129941326}
   - component: {fileID: 129941325}
   - component: {fileID: 756647195}
+  - component: {fileID: 1884788610}
   m_Layer: 0
   m_Name: norppa
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 7754152147855671920}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.94, y: -3.49, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8849201, y: 0.8849201, z: 0.8849201}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -73,8 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: -570085393792698840, guid: 676f272f6470ca2448e11df3162e95d0,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: b0dcc68ea649bd048a346c5d3e420cad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -116,14 +116,14 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 3.7433443}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3, y: 8.36}
+    oldSize: {x: 3.77, y: 9.41}
     newSize: {x: 3.12, y: 8.48}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -146,3 +146,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SealReachedTop: 0
   SealIsGoingDown: 0
+--- !u!114 &1884788610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7754152147855671920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5417f5f0cc1cf54ebe70372886f8d5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GotHit: 0
+  flash: {fileID: 1846360459912185048, guid: 1a9bca7fe528c2b4ba42e627b0ad9ad4, type: 3}
+  isDying: 0

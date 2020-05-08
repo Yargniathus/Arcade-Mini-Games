@@ -151,7 +151,7 @@ public class FistMovemeNyrkki : MonoBehaviour
         {
             middlePower = (leftPower + rightPower) / 2;
             PunchPower = middlePower;
-            Debug.Log(middlePower);
+
             Instantiate(Lightning, new Vector3(0, 2, 0), Quaternion.identity);
             MovingMiddle = false;
             isLeftRep = false;

@@ -56,18 +56,18 @@ public class InstantiateNyrkki : MonoBehaviour
         {
             case 1:
                 {
-                    Instantiate(Seal, new Vector3(-5, -5.71f), Quaternion.identity);
+                    Instantiate(Seal, new Vector3(-5, -5.46f), Quaternion.identity);
                     break;
                 }
 
             case 2:
                 {
-                    Instantiate(Seal, new Vector3(0, -5.71f), Quaternion.identity);
+                    Instantiate(Seal, new Vector3(0, -5.46f), Quaternion.identity);
                     break;
                 }
             case 3:
                 {
-                    Instantiate(Seal, new Vector3(5, -5.71f), Quaternion.identity);
+                    Instantiate(Seal, new Vector3(5, -5.46f), Quaternion.identity);
                     break;
                 }
         }

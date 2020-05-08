@@ -33,7 +33,7 @@ public class OrcHitNyrkki : MonoBehaviour
             //make orc fly off
             orcHP -= (int)GameObject.Find("MainCamera").GetComponent<FistMovemeNyrkki>().PunchPower;
             GotHit = true;
-            Debug.Log("HP:" + orcHP);
+
 
             if (orcHP<1)
             {
@@ -92,7 +92,7 @@ public class OrcHitNyrkki : MonoBehaviour
         //Add score
         points = PlayerPrefs.GetInt("NyrkkiPoints") + 1;
         PlayerPrefs.SetInt("NyrkkiPoints", points);
-        Debug.Log(PlayerPrefs.GetInt("NyrkkiPoints"));
+
         //make bling in the sky
         Instantiate(flash, new Vector3(this.gameObject.GetComponent<Transform>().position.x, this.gameObject.GetComponent<Transform>().position.y), Quaternion.identity);
         

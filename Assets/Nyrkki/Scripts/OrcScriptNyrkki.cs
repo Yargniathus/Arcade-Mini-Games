@@ -97,7 +97,7 @@ public class OrcScriptNyrkki : MonoBehaviour
         int lifeTracker = codeStorage.GetComponent<LifeTrackerNyrkki>().lifeTracker;
         codeStorage.GetComponent<BloodInstantiateNyrkki>().OrcHitsPlayer();
         Destroy(GameObject.Find("Heart" + lifeTracker.ToString()));
-        Debug.Log(lifeTracker);
+ 
     }
     void JumpDownFromLadder()
     {

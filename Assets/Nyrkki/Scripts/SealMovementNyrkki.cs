@@ -16,12 +16,12 @@ public class SealMovementNyrkki : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (this.gameObject.GetComponent<Transform>().position.y < -3f && !SealReachedTop)
+        if (!SealReachedTop)
         {
             this.gameObject.transform.Translate(new Vector3(0, 5 * Time.deltaTime));
         }
 
-        if (this.gameObject.GetComponent<Transform>().position.y > -3.2)
+        if (this.gameObject.GetComponent<Transform>().position.y > -2.9)
         {
             SealReachedTop = true;
             StartCoroutine(ReachingTopCoroutine());
@@ -30,7 +30,7 @@ public class SealMovementNyrkki : MonoBehaviour
         {
             this.gameObject.transform.Translate(new Vector3(0, -5 * Time.deltaTime));
         }
-        if (this.gameObject.GetComponent<Transform>().position.y <-5.70)
+        if (this.gameObject.GetComponent<Transform>().position.y <-5.46)
         {
             Destroy(this.gameObject);
         }
