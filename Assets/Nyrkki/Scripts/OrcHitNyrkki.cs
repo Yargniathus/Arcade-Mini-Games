@@ -13,6 +13,7 @@ public class OrcHitNyrkki : MonoBehaviour
     private int orcHP;
     public bool isDying;
     Color orcColor;
+    private int scoreFromKill;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,7 @@ public class OrcHitNyrkki : MonoBehaviour
 
         orcAnimator = GetComponent<Animator>();
         orcAnimator.SetBool("OrcAnimatorIsDead", false);
+        scoreFromKill = orcHP;
     }
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -90,7 +92,7 @@ public class OrcHitNyrkki : MonoBehaviour
        
         yield return new WaitForSeconds(timeBetweenHitAndDeath-0.1f);
         //Add score
-        points = PlayerPrefs.GetInt("NyrkkiPoints") + 1;
+        points = PlayerPrefs.GetInt("NyrkkiPoints") + scoreFromKill;
         PlayerPrefs.SetInt("NyrkkiPoints", points);
 
         //make bling in the sky

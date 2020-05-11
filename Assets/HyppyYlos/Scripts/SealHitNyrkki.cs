@@ -25,7 +25,7 @@ public class SealHitNyrkki : MonoBehaviour
             { return; }
             GotHit = true;
             isDying = true;
-            points = PlayerPrefs.GetInt("NyrkkiPoints") - 2;
+            points = PlayerPrefs.GetInt("NyrkkiPoints") - 200;
             PlayerPrefs.SetInt("NyrkkiPoints", points);
             Debug.Log(PlayerPrefs.GetInt("NyrkkiPoints"));
             //Destroy seal object
