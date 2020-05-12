@@ -1,7 +1,49 @@
 fileFormatVersion: 2
 guid: 1bce569c49b934845b1a910add0a7103
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -852421196768143305
+    second: Firework_Sprite_0
+  - first:
+      213: -8388312336169578591
+    second: Firework_Sprite_4
+  - first:
+      213: -8211159568225232580
+    second: Firework_Sprite_1
+  - first:
+      213: -8616183659520863772
+    second: Firework_Sprite_6
+  - first:
+      213: -8180647401791651551
+    second: Firework_Sprite_2
+  - first:
+      213: -5748545300005610507
+    second: Firework_Sprite_5
+  - first:
+      213: 4026480283234314673
+    second: Firework_Sprite_3
+  - first:
+      213: 5536147887363362453
+    second: Firework_Sprite_7
+  - first:
+      213: 5737206806229066697
+    second: Firework_Sprite_4
+  - first:
+      213: 3510059201353313281
+    second: Firework_Sprite_6
+  - first:
+      213: 7915329808972565559
+    second: Firework_Sprite_5
+  - first:
+      213: 5106947097401733790
+    second: Firework_Sprite_7
+  - first:
+      213: 7223356687759408856
+    second: Firework_Sprite_6
+  - first:
+      213: -2621875482004531127
+    second: Firework_Sprite_7
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -31,7 +73,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -40,7 +82,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -70,9 +112,351 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Firework_Sprite_0
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 9946
+        width: 2382
+        height: 1257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7381f9710779b24f0800000000000000
+      internalID: -852421196768143305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firework_Sprite_8
+      rect:
+        serializedVersion: 2
+        x: 2713
+        y: 9935
+        width: 2382
+        height: 1257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1afc5999f5ab69b80800000000000000
+      internalID: -8388312336169578591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firework_Sprite_1
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 8555
+        width: 2382
+        height: 1258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3992e590e91c0e80800000000000000
+      internalID: -8211159568225232580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firework_Sprite_9
+      rect:
+        serializedVersion: 2
+        x: 2702
+        y: 8550
+        width: 2376
+        height: 1258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e1dbb6bc9a2d6880800000000000000
+      internalID: -8616183659520863772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firework_Sprite_2
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 7160
+        width: 2382
+        height: 1258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1218c7fe780887e80800000000000000
+      internalID: -8180647401791651551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firework_Sprite_10
+      rect:
+        serializedVersion: 2
+        x: 2696
+        y: 7165
+        width: 2382
+        height: 1258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fb9ce9b1801930b0800000000000000
+      internalID: -5748545300005610507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firework_Sprite_3
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 5715
+        width: 2382
+        height: 1257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b9ab410c7ee0e730800000000000000
+      internalID: 4026480283234314673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firework_Sprite_11
+      rect:
+        serializedVersion: 2
+        x: 2680
+        y: 5676
+        width: 2382
+        height: 1258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59e825afb2954dc40800000000000000
+      internalID: 5536147887363362453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firework_Sprite_4
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 4352
+        width: 2376
+        height: 1258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c3ac387137ae9f40800000000000000
+      internalID: 5737206806229066697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firework_Sprite_12
+      rect:
+        serializedVersion: 2
+        x: 2653
+        y: 4258
+        width: 2382
+        height: 1258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10c614d1f3c36b030800000000000000
+      internalID: 3510059201353313281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firework_Sprite_5
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 2896
+        width: 2376
+        height: 1258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73cced72686e8dd60800000000000000
+      internalID: 7915329808972565559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firework_Sprite_13
+      rect:
+        serializedVersion: 2
+        x: 2652
+        y: 2857
+        width: 2382
+        height: 1258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e92b75bc3558fd640800000000000000
+      internalID: 5106947097401733790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firework_Sprite_6
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 1451
+        width: 2382
+        height: 1252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8de77d3f2a48e3460800000000000000
+      internalID: 7223356687759408856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firework_Sprite_7
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 61
+        width: 2382
+        height: 1257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94850d1f32a3d9bd0800000000000000
+      internalID: -2621875482004531127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
