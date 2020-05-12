@@ -1,31 +1,34 @@
 fileFormatVersion: 2
-guid: f1c6250fb63b60b43aa543d67e07d5cd
+guid: f8bf630c8f3863d458b98ee16923a7d6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2094470220435623579
-    second: Gauntlets_Sprite_Sheet_0
+      213: 7535722234614934461
+    second: Orc_Sprite_Sheet_v4_0
   - first:
-      213: -5944110310947945473
-    second: Gauntlets_Sprite_Sheet_1
+      213: 5147259135954074192
+    second: Orc_Sprite_Sheet_v4_1
   - first:
-      213: -7373822370188877993
-    second: Gauntlets_Sprite_Sheet_2
+      213: 8153123825950502617
+    second: Orc_Sprite_Sheet_v4_2
   - first:
-      213: 4063250744942761910
-    second: Gauntlets_Sprite_Sheet_3
+      213: -3796259465340451635
+    second: Orc_Sprite_Sheet_v4_3
   - first:
-      213: 8281471899114382723
-    second: Gauntlets_Sprite_Sheet_4
+      213: 4239379671499110845
+    second: Orc_Sprite_Sheet_v4_4
   - first:
-      213: 2845699397352099330
-    second: Gauntlets_Sprite_Sheet_5
+      213: 8322527199836772099
+    second: Orc_Sprite_Sheet_v4_5
   - first:
-      213: 2263641599739870750
-    second: Gauntlets_Sprite_Sheet_6
+      213: 8188810753000164144
+    second: Orc_Sprite_Sheet_v4_6
   - first:
-      213: 6780106694405476175
-    second: Gauntlets_Sprite_Sheet_7
+      213: 4361321719814248388
+    second: Orc_Sprite_Sheet_v4_7
+  - first:
+      213: 7596998685011762174
+    second: Orc_Sprite_Sheet_v4_8
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -146,13 +149,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gauntlets_Sprite_Sheet_0
+      name: Orc_Sprite_Sheet_v4_0
       rect:
         serializedVersion: 2
-        x: 54
-        y: 835
-        width: 600
-        height: 488
+        x: 0
+        y: 1556
+        width: 705
+        height: 1443
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,20 +163,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 561fc467e62fee2e0800000000000000
-      internalID: -2094470220435623579
+      spriteID: dbb6c384273449860800000000000000
+      internalID: 7535722234614934461
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gauntlets_Sprite_Sheet_2
+      name: Orc_Sprite_Sheet_v4_1
       rect:
         serializedVersion: 2
-        x: 760
-        y: 836
-        width: 590
-        height: 487
+        x: 707
+        y: 2230
+        width: 12
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,20 +184,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75f101c5f9beaa990800000000000000
-      internalID: -7373822370188877993
+      spriteID: 05a3d6da9ecbe6740800000000000000
+      internalID: 5147259135954074192
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gauntlets_Sprite_Sheet_4
+      name: Orc_Sprite_Sheet_v4_2
       rect:
         serializedVersion: 2
-        x: 48
-        y: 85
-        width: 504
-        height: 624
+        x: 815
+        y: 1556
+        width: 752
+        height: 1443
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,20 +205,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 385a71ca0d2bde270800000000000000
-      internalID: 8281471899114382723
+      spriteID: 9dead8f2ce6b52170800000000000000
+      internalID: 8153123825950502617
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gauntlets_Sprite_Sheet_5
+      name: Orc_Sprite_Sheet_v4_3
       rect:
         serializedVersion: 2
-        x: 752
-        y: 70
-        width: 484
-        height: 623
+        x: 1662
+        y: 1525
+        width: 755
+        height: 1474
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,8 +226,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20e07b45684fd7720800000000000000
-      internalID: 2845699397352099330
+      spriteID: dc40b25312af05bc0800000000000000
+      internalID: -3796259465340451635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Sprite_Sheet_v4_4
+      rect:
+        serializedVersion: 2
+        x: 2510
+        y: 1652
+        width: 804
+        height: 1252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db977bb995d45da30800000000000000
+      internalID: 4239379671499110845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Sprite_Sheet_v4_5
+      rect:
+        serializedVersion: 2
+        x: 3439
+        y: 1285
+        width: 785
+        height: 1714
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3071cc3c46e8f7370800000000000000
+      internalID: 8322527199836772099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Sprite_Sheet_v4_6
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 37
+        width: 752
+        height: 1443
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03b49716eff74a170800000000000000
+      internalID: 8188810753000164144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Sprite_Sheet_v4_7
+      rect:
+        serializedVersion: 2
+        x: 1662
+        y: 21
+        width: 755
+        height: 1459
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c759b43ff6868c30800000000000000
+      internalID: 4361321719814248388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Sprite_Sheet_v4_8
+      rect:
+        serializedVersion: 2
+        x: 2510
+        y: 133
+        width: 804
+        height: 1235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efb5c3bad06fd6960800000000000000
+      internalID: 7596998685011762174
       vertices: []
       indices: 
       edges: []
