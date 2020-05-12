@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: e43747bb8c222074db501ab5776ef7be
+guid: c2d4f7a6587228041809f85671f89bfc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7142211074343871619
-    second: Team_Rocket_Bling_v2_0
+      213: -8791049148282615987
+    second: Team_Rocket_Bling_v3_0
   - first:
-      213: -6592234176048845119
-    second: Team_Rocket_Bling_v2_1
+      213: -2839667425705252287
+    second: Team_Rocket_Bling_v3_1
   - first:
-      213: 8262036214508625506
-    second: Team_Rocket_Bling_v2_2
+      213: 1973379463250797972
+    second: Team_Rocket_Bling_v3_2
   - first:
-      213: -5868473320262071180
-    second: Team_Rocket_Bling_v2_3
+      213: 8016143419243182434
+    second: Team_Rocket_Bling_v3_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -134,13 +134,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Team_Rocket_Bling_v2_0
+      name: Team_Rocket_Bling_v3_0
       rect:
         serializedVersion: 2
-        x: 75
-        y: 140
+        x: 80
+        y: 119
         width: 480
-        height: 1065
+        height: 1060
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,20 +148,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7b5fd27ed4c1ec90800000000000000
-      internalID: -7142211074343871619
+      spriteID: d474d99606beff580800000000000000
+      internalID: -8791049148282615987
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Team_Rocket_Bling_v2_1
+      name: Team_Rocket_Bling_v3_1
       rect:
         serializedVersion: 2
         x: 660
-        y: 425
-        width: 255
-        height: 495
+        y: 399
+        width: 260
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,20 +169,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ce2b6ca1fda384a0800000000000000
-      internalID: -6592234176048845119
+      spriteID: 14a279285897798d0800000000000000
+      internalID: -2839667425705252287
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Team_Rocket_Bling_v2_2
+      name: Team_Rocket_Bling_v3_2
       rect:
         serializedVersion: 2
         x: 1020
-        y: 575
-        width: 150
-        height: 210
+        y: 539
+        width: 160
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,20 +190,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26e1337b926a8a270800000000000000
-      internalID: 8262036214508625506
+      spriteID: 4956d1a9a2ad26b10800000000000000
+      internalID: 1973379463250797972
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Team_Rocket_Bling_v2_3
+      name: Team_Rocket_Bling_v3_3
       rect:
         serializedVersion: 2
-        x: 1275
-        y: 635
-        width: 75
-        height: 90
+        x: 1260
+        y: 599
+        width: 80
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -211,8 +211,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47c0ce39b9efe8ea0800000000000000
-      internalID: -5868473320262071180
+      spriteID: 269339ce7ff0f3f60800000000000000
+      internalID: 8016143419243182434
       vertices: []
       indices: 
       edges: []
