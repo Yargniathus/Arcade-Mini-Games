@@ -11,15 +11,17 @@ public class MainMenuScript : MonoBehaviour
     private int maxMenuOption;
     Outline game1;
     Outline game2;
+    Outline game3;
     Outline credits;
     
     
     void Start()
     {
         chosenMenuOption = 0;
-        maxMenuOption = 2;
+        maxMenuOption = 3;
         game1 = GameObject.Find("Game1").GetComponent<Outline>();
         game2 = GameObject.Find("Game2").GetComponent<Outline>();
+        game3 = GameObject.Find("Game3").GetComponent<Outline>();
         credits = GameObject.Find("Credits").GetComponent<Outline>();
 
     }
@@ -65,6 +67,14 @@ public class MainMenuScript : MonoBehaviour
                 SceneManager.LoadScene("LabyrinttiRandomLevel");
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            if (game3.enabled == true)
+            {             
+                SceneManager.LoadScene("NyrkkiMain");
+            }
+        }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             if (credits.enabled == true)
@@ -80,18 +90,28 @@ public class MainMenuScript : MonoBehaviour
             case 0:
                 game1.enabled = true;
                 game2.enabled = false;
+                game3.enabled = false;
                 credits.enabled = false;
                 break;
             case 1:
                 game1.enabled = false;
                 game2.enabled = true;
+                game3.enabled = false;
                 credits.enabled = false;
                 break;
             case 2:
                 game1.enabled = false;
                 game2.enabled = false;
+                game3.enabled = true;
+                credits.enabled = false;
+                break;
+            case 3:
+                game1.enabled = false;
+                game2.enabled = false;
+                game3.enabled = false;
                 credits.enabled = true;
                 break;
+
         }
     }
 }
