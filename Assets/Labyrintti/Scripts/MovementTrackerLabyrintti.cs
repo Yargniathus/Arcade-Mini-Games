@@ -15,8 +15,9 @@ public class MovementTrackerLabyrintti : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MainCharLabyrinttiX = (int)this.transform.position.x;
-        MainCharLabyrinttiY = (int)this.transform.position.y;
+    
+        MainCharLabyrinttiX = Mathf.CeilToInt(transform.position.x);
+        MainCharLabyrinttiY = Mathf.FloorToInt(transform.position.y);
         
     }
 }

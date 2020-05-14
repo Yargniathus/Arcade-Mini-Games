@@ -110,14 +110,9 @@ public class MainMenuScript : MonoBehaviour
         isTimerRunnig = true;
         isLeftRep = true;
         StartCoroutine(LeftDelay());
-        if (chosenMenuOption > 0)
-        {
-            chosenMenuOption--;
-        }
-        else
-        {
-            chosenMenuOption = maxMenuOption;
-        }
+
+
+
     }
 
     private void RightRepHandler(object sender, RightRepEventArgs e)
@@ -125,14 +120,7 @@ public class MainMenuScript : MonoBehaviour
         isTimerRunnig = true;
         isRightRep = true;
         StartCoroutine(RightDelay());
-        if (chosenMenuOption < maxMenuOption)
-        {
-            chosenMenuOption++;
-        }
-        else
-        {
-            chosenMenuOption = 0;
-        }
+
     }
     private void HandleRepetitionLogic()
     {
@@ -141,9 +129,7 @@ public class MainMenuScript : MonoBehaviour
             targetTime += Time.deltaTime;
 
             if (targetTime >= combinedPullTimeDelay)
-            {
-                
-                
+            {       
                 isTimerRunnig = false;
                 targetTime = 0;
             }
@@ -160,6 +146,17 @@ public class MainMenuScript : MonoBehaviour
     {
 
         yield return new WaitForSeconds(combinedPullTimeDelay);
+        if (!isRightRep)
+        {
+            if (chosenMenuOption > 0)
+            {
+                chosenMenuOption--;
+            }
+            else
+            {
+                chosenMenuOption = maxMenuOption;
+            }
+        }
         isLeftRep = false;
 
 }
@@ -167,6 +164,17 @@ IEnumerator RightDelay()
 {
 
         yield return new WaitForSeconds(combinedPullTimeDelay);
+        if (!isLeftRep)
+        {
+            if (chosenMenuOption < maxMenuOption)
+            {
+                chosenMenuOption++;
+            }
+            else
+            {
+                chosenMenuOption = 0;
+            }
+        }
         isRightRep = false;
 
     }

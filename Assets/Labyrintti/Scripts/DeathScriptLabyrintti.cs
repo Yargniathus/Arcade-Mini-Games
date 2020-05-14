@@ -13,6 +13,7 @@ public class DeathScriptLabyrintti : MonoBehaviour
     public Tilemap tileMap;
     private GameObject labyrinttiPlayer;
     private bool crocHasSpawned = false;
+    private bool isColliding = false;
    
      
     void Start()
@@ -29,7 +30,8 @@ public class DeathScriptLabyrintti : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player" && GameStartLabyrintti.LabyrinttiGameStarted == true)
+        if (other.gameObject.tag == "Player" && GameStartLabyrintti.LabyrinttiGameStarted == true && !isColliding)
+            isColliding = true;
         {
             StartCoroutine(CrocDelayDeath());
            
@@ -37,6 +39,7 @@ public class DeathScriptLabyrintti : MonoBehaviour
     }
     IEnumerator CrocDelayDeath()
     {
+        
 
         if (labyrinttiPlayer.GetComponent<Animator>().GetBool("MovingRight") == true && crocHasSpawned == false)
         {

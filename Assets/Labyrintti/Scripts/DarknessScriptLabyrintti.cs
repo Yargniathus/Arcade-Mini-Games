@@ -7,7 +7,7 @@ public class DarknessScriptLabyrintti : MonoBehaviour
 {
     // Start is called before the first frame update 
     float opacityTimer = 0;
-    public float startGameTimer = 5;
+    public float startGameTimer = 10;
     GameObject darknessLabyrintti;
     GameObject timeUntilDarkness;
     bool lightIncreasing = true;
@@ -22,7 +22,7 @@ public class DarknessScriptLabyrintti : MonoBehaviour
         if (GameStartLabyrintti.LabyrinttiGameStarted != false)
         {
             opacityTimer += Time.deltaTime;
-            startGameTimer = 5 - opacityTimer;
+            startGameTimer = 10 - opacityTimer;
             if (startGameTimer > 0)
             {
                 this.timeUntilDarkness.GetComponent<Text>().text = "Time until darkness: " + this.startGameTimer.ToString("0");
@@ -30,7 +30,7 @@ public class DarknessScriptLabyrintti : MonoBehaviour
             else
             {
                 darknessLabyrintti = GameObject.Find("Pimennys");
-                darknessLabyrintti.GetComponent<SpriteRenderer>().color = new Color(1F, 1f, 1f, (opacityTimer / 2 - 3));
+                darknessLabyrintti.GetComponent<SpriteRenderer>().color = new Color(1F, 1f, 1f, (opacityTimer / 2 - 6));
                 this.timeUntilDarkness.GetComponent<Text>().text = "SURVIVE!";
                 
                 if (lightIncreasing == true)
