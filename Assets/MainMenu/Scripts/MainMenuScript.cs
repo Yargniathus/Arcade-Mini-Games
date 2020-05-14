@@ -3,20 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Xamk.GymApi;
+using System.Threading;
 
 public class MainMenuScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private CancellationTokenSource cancelTokenSource;
+    private GymMachineListener gymMachineListener;
     private int chosenMenuOption;
     private int maxMenuOption;
     Outline game1;
     Outline game2;
     Outline game3;
     Outline credits;
-    
-    
+    private bool isTimerRunnig = false;
+    private float combinedPullTimeDelay = 0.350f;
+    private float targetTime = 0f;
+    private bool isLeftRep = false;
+    private bool isRightRep = false;
+    private bool confirmingSelection = false;
+
+
     void Start()
     {
+        cancelTokenSource = new CancellationTokenSource();
+        gymMachineListener = new GymMachineListener(HurObject.Machine.OptimalRhomb);
+        gymMachineListener.LeftRepHandler += LeftRepHandler;
+        gymMachineListener.RightRepHandler += RightRepHandler;
+        gymMachineListener.StartListener(cancelTokenSource.Token);
         chosenMenuOption = 0;
         maxMenuOption = 3;
         game1 = GameObject.Find("Game1").GetComponent<Outline>();
@@ -31,60 +45,36 @@ public class MainMenuScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            if (chosenMenuOption < maxMenuOption)
-            {
-                chosenMenuOption++;
-            }
-            else
-            {
-                chosenMenuOption = 0;
-            }
+            gymMachineListener.SimulateRightRep(1, 20, 500);
+
         }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            if (chosenMenuOption > 0)
-            {
-                chosenMenuOption--;
-            }
-            else
-            {
-                chosenMenuOption = maxMenuOption;
-            }
+            gymMachineListener.SimulateLeftRep(1, 20, 500);
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.DownArrow) || confirmingSelection)
         {
             if (game1.enabled == true)
             {
                 SceneManager.LoadScene("HyppyYlosMain");
             }
-        }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            if (game2.enabled == true)
+            else if (game2.enabled == true)
             {
                 PlayerPrefs.SetInt("LabyrinttiLevel", 1);
                 SceneManager.LoadScene("LabyrinttiRandomLevel");
             }
-        }
-
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            if (game3.enabled == true)
-            {             
+            else if(game3.enabled == true)
+            {
                 SceneManager.LoadScene("NyrkkiMain");
             }
-        }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            if (credits.enabled == true)
+            else if (credits.enabled == true)
             {
                 //Not implemented yet
                 //SceneManager.LoadScene("Credits");
-               
             }
         }
-
+       
         switch (chosenMenuOption)
         {
             case 0:
@@ -113,5 +103,76 @@ public class MainMenuScript : MonoBehaviour
                 break;
 
         }
+        HandleRepetitionLogic();
+    }
+    private void LeftRepHandler(object sender, LeftRepEventArgs e)
+    {
+        isTimerRunnig = true;
+        isLeftRep = true;
+        StartCoroutine(LeftDelay());
+        if (chosenMenuOption > 0)
+        {
+            chosenMenuOption--;
+        }
+        else
+        {
+            chosenMenuOption = maxMenuOption;
+        }
+    }
+
+    private void RightRepHandler(object sender, RightRepEventArgs e)
+    {
+        isTimerRunnig = true;
+        isRightRep = true;
+        StartCoroutine(RightDelay());
+        if (chosenMenuOption < maxMenuOption)
+        {
+            chosenMenuOption++;
+        }
+        else
+        {
+            chosenMenuOption = 0;
+        }
+    }
+    private void HandleRepetitionLogic()
+    {
+        if (isTimerRunnig)
+        {
+            targetTime += Time.deltaTime;
+
+            if (targetTime >= combinedPullTimeDelay)
+            {
+                
+                
+                isTimerRunnig = false;
+                targetTime = 0;
+            }
+
+            if (isLeftRep && isRightRep)
+            {
+                confirmingSelection = true;
+                isTimerRunnig = false;
+                targetTime = 0;
+            }
+        }
+    }
+    IEnumerator LeftDelay()
+    {
+
+        yield return new WaitForSeconds(combinedPullTimeDelay);
+        isLeftRep = false;
+
+}
+IEnumerator RightDelay()
+{
+
+        yield return new WaitForSeconds(combinedPullTimeDelay);
+        isRightRep = false;
+
+    }
+
+    private void OnDestroy()
+    {
+        if (gymMachineListener != null) cancelTokenSource.Cancel();
     }
 }
