@@ -17,7 +17,7 @@ public class OrcHitNyrkki : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        orcHP = Random.Range(1, 1000);
+        orcHP = Random.Range(1, 100);
 
         orcAnimator = GetComponent<Animator>();
         orcAnimator.SetBool("OrcAnimatorIsDead", false);
@@ -58,19 +58,19 @@ public class OrcHitNyrkki : MonoBehaviour
     void Update()
     {
 
-        if (orcHP < 251)
+        if (orcHP < 25.1)
         {
            orcColor = new Color(0.6155064f, 1, 0.5613208f);
         }
-        if (orcHP >250 && orcHP<501)
+        if (orcHP >25.0 && orcHP<50.1)
         {
            orcColor = new Color(1, 0.940287f, 0.511f);
         }      
-        if (orcHP > 500 && orcHP<751)
+        if (orcHP > 50.0 && orcHP<75.1)
         {
            orcColor = new Color(1f, 0.645642f, 0.5607843f);
         }
-        if (orcHP>750)
+        if (orcHP>75.0)
         {
             orcColor = new Color(0.3018868f, 0.2121752f, 0.2121752f);
         }

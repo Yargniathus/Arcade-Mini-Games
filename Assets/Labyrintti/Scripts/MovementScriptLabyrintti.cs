@@ -40,7 +40,7 @@ public class MovementScriptLabyrintti : MonoBehaviour
         journeyLength = Vector2.Distance(startMarker, endMarker);
 
         cancelTokenSource = new CancellationTokenSource();
-        gymMachineListener = new GymMachineListener(HurObject.Machine.OptimalRhomb);
+        gymMachineListener = new GymMachineListener(HurObject.Machine.BicepsTriceps);
         gymMachineListener.LeftRepHandler += LeftRepHandler;
         gymMachineListener.RightRepHandler += RightRepHandler;
         gymMachineListener.StartListener(cancelTokenSource.Token);

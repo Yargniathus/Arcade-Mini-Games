@@ -17,7 +17,7 @@ public class FistMovemeNyrkki : MonoBehaviour
 
 
     private bool isTimerRunnig = false;
-    private float combinedPullTimeDelay = 0.350f;
+    private float combinedPullTimeDelay = 0.100f;
     private float targetTime = 0f;
     private bool isLeftRep = false;
     private bool isRightRep = false;
@@ -30,7 +30,7 @@ public class FistMovemeNyrkki : MonoBehaviour
     void Start()
     {
         cancelTokenSource = new CancellationTokenSource();
-        gymMachineListener = new GymMachineListener(HurObject.Machine.OptimalRhomb);
+        gymMachineListener = new GymMachineListener(HurObject.Machine.BicepsTriceps);
         gymMachineListener.LeftRepHandler += LeftRepHandler;
         gymMachineListener.RightRepHandler += RightRepHandler;
         gymMachineListener.StartListener(cancelTokenSource.Token);
