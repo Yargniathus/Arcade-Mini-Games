@@ -19,7 +19,16 @@ public class EndScriptNyrkki : MonoBehaviour
         gymMachineListener.RightRepHandler += RightRepHandler;
         gymMachineListener.StartListener(cancelTokenSource.Token);
         int endScoreNyrkki = PlayerPrefs.GetInt("NyrkkiPoints");
+        int highScoreNyrkki = PlayerPrefs.GetInt("NyrkkiHighScore");
         this.GetComponent<Text>().text = "SCORE: " + endScoreNyrkki.ToString();
+        if (endScoreNyrkki>highScoreNyrkki)
+        {
+            GameObject.Find("ReachedHighScore").GetComponent<Text>().text = "NEW HIGH SCORE!";
+            PlayerPrefs.SetInt("NyrkkiHighScore", endScoreNyrkki);
+            highScoreNyrkki = PlayerPrefs.GetInt("NyrkkiHighScore");
+
+        }
+        GameObject.Find("HighScore").GetComponent<Text>().text = "HI-SCORE: " + highScoreNyrkki.ToString();
     }
 
     // Update is called once per frame
