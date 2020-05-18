@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OrcScriptNyrkki : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class OrcScriptNyrkki : MonoBehaviour
     bool isjumping;
     private Animator orcAnimator;
     private float jumpingDownSpeed = 6f;
-    
+    string sceneName;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,8 @@ public class OrcScriptNyrkki : MonoBehaviour
         isjumping = false;
         orcAnimator = GetComponent<Animator>();
         orcAnimator.SetBool("OrcAnimatorIsClimbing", true);
+        Scene currentScene = SceneManager.GetActiveScene();
+        sceneName = currentScene.name;
         
     }
 
@@ -25,8 +28,11 @@ public class OrcScriptNyrkki : MonoBehaviour
         //reaches top, jumps down
         if (this.gameObject.GetComponent<Transform>().position.y >= 2)
         {
-            reachedTop = true; 
-            StartCoroutine(JumpingStartCoroutine());
+            reachedTop = true;
+            if (sceneName == "NyrkkiUncensored")
+            {
+                StartCoroutine(JumpingStartCoroutine());
+            }
         }
 
         //makes orc hittable
@@ -35,8 +41,15 @@ public class OrcScriptNyrkki : MonoBehaviour
             this.gameObject.GetComponent<BoxCollider2D>().enabled = true;
         }
         ClimbingUp();
-        JumpingAtPlayer();
-        JumpDownFromLadder();
+        if (sceneName == "NyrkkiUncensored")
+        {
+            JumpingAtPlayer();
+            JumpDownFromLadder();
+        }
+        if (sceneName == "NyrkkiMain" || sceneName == "NyrkkiEndless")
+        {
+            ClimbingDown();
+        }
     }
 
     void ClimbingUp()
@@ -45,6 +58,30 @@ public class OrcScriptNyrkki : MonoBehaviour
         {
 
             this.gameObject.transform.Translate(new Vector3(0, 4 * Time.deltaTime));
+        }
+    }
+    void ClimbingDown()
+    {
+        if (reachedTop && !GetComponent<OrcHitNyrkki>().IsRecovering)
+        {
+            gameObject.transform.Translate(new Vector3(0, -4 * Time.deltaTime));
+            if (gameObject.transform.position.y < -1.58)
+            {
+                this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            }
+            if (gameObject.transform.position.y < -6)
+            {
+                if (sceneName == "NyrkkiMain")
+                {
+                    int points = PlayerPrefs.GetInt("NyrkkiPoints") - 100;
+                    PlayerPrefs.SetInt("NyrkkiPoints", points);
+                }
+                if (sceneName == "NyrkkiEndless")
+                {
+                    HitsPlayer();
+                }
+                Destroy(gameObject);
+            }
         }
     }
 
