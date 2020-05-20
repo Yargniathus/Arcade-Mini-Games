@@ -15,6 +15,10 @@ public class MainMenuScript : MonoBehaviour
     Outline game1;
     Outline game2;
     Outline game3;
+    Image background1;
+    Image background2;
+    Image background3;
+    Image background4;
     Outline credits;
     private bool isTimerRunnig = false;
     private float combinedPullTimeDelay = 0.350f;
@@ -36,6 +40,11 @@ public class MainMenuScript : MonoBehaviour
         game1 = GameObject.Find("Game1").GetComponent<Outline>();
         game2 = GameObject.Find("Game2").GetComponent<Outline>();
         game3 = GameObject.Find("Game3").GetComponent<Outline>();
+        background1 = GameObject.Find("Background1").GetComponent<Image>();
+        background2 = GameObject.Find("Background2").GetComponent<Image>();
+        background3 = GameObject.Find("Background3").GetComponent<Image>();
+        background4 = GameObject.Find("Background4").GetComponent<Image>();
+
         credits = GameObject.Find("Credits").GetComponent<Outline>();
 
     }
@@ -81,24 +90,40 @@ public class MainMenuScript : MonoBehaviour
                 game1.enabled = true;
                 game2.enabled = false;
                 game3.enabled = false;
+                background1.enabled = true;
+                background2.enabled = false;
+                background3.enabled = false;
+                background4.enabled = false;
                 credits.enabled = false;
                 break;
             case 1:
                 game1.enabled = false;
                 game2.enabled = true;
                 game3.enabled = false;
+                background1.enabled = false;
+                background2.enabled = true;
+                background3.enabled = false;
+                background4.enabled = false;
                 credits.enabled = false;
                 break;
             case 2:
                 game1.enabled = false;
                 game2.enabled = false;
                 game3.enabled = true;
+                background1.enabled = false;
+                background2.enabled = false;
+                background3.enabled = true;
+                background4.enabled = false;
                 credits.enabled = false;
                 break;
             case 3:
                 game1.enabled = false;
                 game2.enabled = false;
                 game3.enabled = false;
+                background1.enabled =false;
+                background2.enabled = false;
+                background3.enabled = false;
+                background4.enabled = true;
                 credits.enabled = true;
                 break;
 
