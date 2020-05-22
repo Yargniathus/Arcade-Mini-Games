@@ -372,7 +372,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 289615181}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -567,15 +567,15 @@ MonoBehaviour:
   GroundTileMap: {fileID: 1723256936}
   WaterTileMap: {fileID: 1432225954}
   FinishTileMap: {fileID: 1730820397}
-  VerticalTile: {fileID: 11400000, guid: e8092b6c47112bc4e83d1830a65c41c8, type: 2}
-  HorizontalRightToLeft: {fileID: 11400000, guid: ad77fd85cbba44b44a31253a56a4afbd,
+  VerticalTile: {fileID: 11400000, guid: 9e5e939afc688a04d8f725018b47dc9a, type: 2}
+  HorizontalRightToLeft: {fileID: 11400000, guid: a2c8dc6f688880949b93baacbecdb4e4,
     type: 2}
-  HorizontalLeftToRight: {fileID: 11400000, guid: 175e4cda566aa724284159d0489fce0e,
+  HorizontalLeftToRight: {fileID: 11400000, guid: 05953d2d6a0f9bd489f4d08dd10c3ea2,
     type: 2}
-  DownToRightTile: {fileID: 11400000, guid: 4d0664315fed8e34ab74d8c5265a91a7, type: 2}
-  DownToLeftTile: {fileID: 11400000, guid: 5403716a1fd97b04c9ec9463c81e2add, type: 2}
-  LeftToDownTile: {fileID: 11400000, guid: c5a8904b24b20524cb51e2937d0d937e, type: 2}
-  RightToDownTile: {fileID: 11400000, guid: 07dad6eded7fc4b40a12bec3427adf77, type: 2}
+  DownToRightTile: {fileID: 11400000, guid: c8926b5d37ab59447b2afae7a5c930d3, type: 2}
+  DownToLeftTile: {fileID: 11400000, guid: 7d0f0d40186b4454291c200c88992a88, type: 2}
+  LeftToDownTile: {fileID: 11400000, guid: 18cc4235ca4e163469c35e2a143a67b5, type: 2}
+  RightToDownTile: {fileID: 11400000, guid: 7942f5ef36e1bd34db83c9c257b2fbed, type: 2}
   WaterTile: {fileID: 11400000, guid: 787163fdacd931a498bf9ca3978f9d93, type: 2}
   FinishTile: {fileID: 11400000, guid: 41541102d5c395f48bb8f4dd4cfb998e, type: 2}
   LastPlacedTile: {fileID: 0}

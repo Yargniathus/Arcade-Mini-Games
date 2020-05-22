@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efae279538bf132489bfb39f5881e326, type: 3}
+  m_Name: AnimatedBridge7
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: -8386924509940671562, guid: 4765ebbcee8c39b43898eccf58801a88, type: 3}
+  - {fileID: 1399366622644992524, guid: 8c8472257fc5d614a9410e9843056a76, type: 3}
+  m_MinSpeed: 1
+  m_MaxSpeed: 1
+  m_AnimationStartTime: 0
+  m_TileColliderType: 0

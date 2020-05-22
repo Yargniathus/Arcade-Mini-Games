@@ -12,6 +12,7 @@ public class GameStartLabyrintti : MonoBehaviour
     GameObject instructionScreen;
     private CancellationTokenSource cancelTokenSource;
     private GymMachineListener gymMachineListener;
+    GameObject labyrinttiPlayer;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,7 @@ public class GameStartLabyrintti : MonoBehaviour
         gymMachineListener.LeftRepHandler += LeftRepHandler;
         gymMachineListener.RightRepHandler += RightRepHandler;
         gymMachineListener.StartListener(cancelTokenSource.Token);
+        labyrinttiPlayer = GameObject.Find("Snake");
     }
 
     // Update is called once per frame
@@ -61,7 +63,7 @@ public class GameStartLabyrintti : MonoBehaviour
         Destroy(this.instructionScreen);
 
         yield return new WaitForSeconds(0.5f);
-
+        labyrinttiPlayer.GetComponent<BoxCollider2D>().enabled = true;
         LabyrinttiGameStarted = true;
     }
 }

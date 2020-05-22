@@ -9,19 +9,19 @@ public class RandomTileLabyrintti : MonoBehaviour
     public Tilemap GroundTileMap;
     public Tilemap WaterTileMap;
     public Tilemap FinishTileMap;
-    public Tile VerticalTile;
-    public Tile HorizontalRightToLeft;
-    public Tile HorizontalLeftToRight;
-    public Tile DownToRightTile;
-    public Tile DownToLeftTile;
-    public Tile LeftToDownTile;
-    public Tile RightToDownTile;
+    public AnimatedTile VerticalTile;
+    public AnimatedTile HorizontalRightToLeft;
+    public AnimatedTile HorizontalLeftToRight;
+    public AnimatedTile DownToRightTile;
+    public AnimatedTile DownToLeftTile;
+    public AnimatedTile LeftToDownTile;
+    public AnimatedTile RightToDownTile;
     public Tile WaterTile;
     public Tile FinishTile;
-    public static Tile EmptyTile;
+    public static AnimatedTile EmptyTile;
     private int yValue;
     private int xValue;
-    public Tile LastPlacedTile;
+    public AnimatedTile LastPlacedTile;
     private int leftEdgeValue;
     private int rightEdgeValue;
     private int bottomEdgeValue;
@@ -71,9 +71,9 @@ public class RandomTileLabyrintti : MonoBehaviour
             }
         }
     }
-    private Tile GetNextTile()
+    private AnimatedTile GetNextTile()
     {
-        Tile tileToBePlaced = EmptyTile;
+        AnimatedTile tileToBePlaced = EmptyTile;
 
         if (LastPlacedTile==EmptyTile || LastPlacedTile == VerticalTile || LastPlacedTile == LeftToDownTile || LastPlacedTile == RightToDownTile)
         {
