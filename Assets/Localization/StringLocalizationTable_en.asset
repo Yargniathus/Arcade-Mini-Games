@@ -26,5 +26,25 @@ MonoBehaviour:
     m_Localized: Start new game
     m_Metadata:
       m_Items: []
+  - m_Id: 3
+    m_Localized: You gain points for each orc you hit, but lose points for each seal
+      you hit and each orc that escapes. 40 second levels.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: 'Use left and right controls to punch left and right, and both controls
+      simultaneously to hit the middle. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: You gain points for each orc you hit, but lose points for each seal
+      you hit. No time limit. You lose one health for each escaped orc.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: You gain points for each orc you hit, but lose points for each seal
+      you hit. Orcs attack you, causing life loss. 40 second levels.
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
   m_Name: StringLocalizationTable Shared Data
   m_EditorClassIdentifier: 
-  m_NextAvailableId: 3
+  m_NextAvailableId: 7
   m_TableName: GUI
   m_TableNameGuidString: ce299e848f9418f429c7dd860f9c6853
   m_Entries:
@@ -22,6 +22,22 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 2
     m_Key: NewGameButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Key: NyrkkiMenuStandardText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Key: NyrkkiMenuMainText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Key: NyrkkiMenuEndlessText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Key: NyrkkiMenuUncensoredText
     m_Metadata:
       m_Items: []
   m_Metadata:

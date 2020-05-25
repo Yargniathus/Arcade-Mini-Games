@@ -26,5 +26,28 @@ MonoBehaviour:
     m_Localized: Aloita uusi peli
     m_Metadata:
       m_Items: []
+  - m_Id: 3
+    m_Localized: "Saat pisteit\xE4 jokaisesta ly\xF6m\xE4st\xE4si \xF6rkist\xE4,
+      mutta menet\xE4t niit\xE4 ly\xF6dyist\xE4 norpista ja karanneista \xF6rkeist\xE4.
+      40 sekunnin kent\xE4t."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: "K\xE4yt\xE4 vasenta ja  oikeaa kontrollia ly\xF6d\xE4ksesi vasemmalle
+      ja oikealle. Samanaikaisella toistolla ly\xF6t keskelle."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: "Saat pisteit\xE4 jokaisesta ly\xF6m\xE4st\xE4si \xF6rkist, mutta
+      menet\xE4t niit\xE4 ly\xF6dyist\xE4 norpista. Ei aikarajaa. Menet\xE4t el\xE4m\xE4n
+      jokaisesta karanneesta \xF6rkist\xE4."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: "Saat pisteit\xE4 jokaisesta ly\xF6m\xE4st\xE4si \xF6rkist\xE4,
+      mutta menet\xE4t niit\xE4 ly\xF6dyist\xE4 norpista. \xD6rkit hy\xF6kk\xE4\xE4v\xE4t
+      kimppuusi, aiheuttaen el\xE4m\xE4n menetyksen. 40 sekuntin aikaraja."
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

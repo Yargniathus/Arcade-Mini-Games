@@ -25,6 +25,8 @@ public class SealHitNyrkki : MonoBehaviour
             { return; }
             GotHit = true;
             isDying = true;
+            ScoreMultiplierNyrkki.ScoreMultiplier = 1;
+            ScoreMultiplierNyrkki.KillCounter = 0;
             points = PlayerPrefs.GetInt("NyrkkiPoints") - 200;
             PlayerPrefs.SetInt("NyrkkiPoints", points);
             Debug.Log(PlayerPrefs.GetInt("NyrkkiPoints"));

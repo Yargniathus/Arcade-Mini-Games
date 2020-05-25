@@ -128,6 +128,8 @@ public class OrcScriptNyrkki : MonoBehaviour
     }
     void HitsPlayer()
     {
+        ScoreMultiplierNyrkki.ScoreMultiplier = 1;
+        ScoreMultiplierNyrkki.KillCounter = 0;
         //remove life
         var codeStorage = GameObject.Find("MainCamera");
         codeStorage.GetComponent<LifeTrackerNyrkki>().lifeTracker -= 1;

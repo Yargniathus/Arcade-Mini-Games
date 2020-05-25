@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OrcHitNyrkki : MonoBehaviour
 {
@@ -13,15 +14,22 @@ public class OrcHitNyrkki : MonoBehaviour
     private int orcHP;
     public bool isDying;
     Color orcColor;
+    private float scoreFromKillMultiplied;
+    string sceneName;
     private int scoreFromKill;
+    
+
     // Start is called before the first frame update
     void Start()
     {
         orcHP = Random.Range(1, 100);
-
+        Scene currentScene = SceneManager.GetActiveScene();
+        sceneName = currentScene.name;
         orcAnimator = GetComponent<Animator>();
         orcAnimator.SetBool("OrcAnimatorIsDead", false);
         scoreFromKill = orcHP;
+        scoreFromKillMultiplied = orcHP * ScoreMultiplierNyrkki.ScoreMultiplier;
+    
     }
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -39,6 +47,7 @@ public class OrcHitNyrkki : MonoBehaviour
 
             if (orcHP<1)
             {
+                ScoreMultiplierNyrkki.KillCounter += 1;
                 isDying = true;
                 StartCoroutine(OrcDestructionCoroutine());
 
@@ -95,7 +104,15 @@ public class OrcHitNyrkki : MonoBehaviour
        
         yield return new WaitForSeconds(timeBetweenHitAndDeath-0.1f);
         //Add score
-        points = PlayerPrefs.GetInt("NyrkkiPoints") + scoreFromKill;
+        if (sceneName == "NyrkkiEndless")
+        {
+            points = PlayerPrefs.GetInt("NyrkkiPoints") + (int)scoreFromKillMultiplied;
+        }
+        else
+        { 
+            points = PlayerPrefs.GetInt("NyrkkiPoints") + scoreFromKill;
+        }
+        
         PlayerPrefs.SetInt("NyrkkiPoints", points);
 
         //make bling in the sky
