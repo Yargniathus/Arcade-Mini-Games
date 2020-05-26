@@ -38,12 +38,24 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 5
     m_Localized: You gain points for each orc you hit, but lose points for each seal
-      you hit. No time limit. You lose one health for each escaped orc.
+      you hit. No time limit. Orcs attack you, causing life loss.
     m_Metadata:
       m_Items: []
   - m_Id: 6
     m_Localized: You gain points for each orc you hit, but lose points for each seal
       you hit. Orcs attack you, causing life loss. 40 second levels.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Localized: Standard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Localized: Endless
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: Original
     m_Metadata:
       m_Items: []
   references:
