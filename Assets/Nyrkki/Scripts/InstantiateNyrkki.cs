@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InstantiateNyrkki : MonoBehaviour
 {
@@ -8,8 +9,11 @@ public class InstantiateNyrkki : MonoBehaviour
     private float spawnInterval;
     public GameObject Orc;
     public GameObject Seal;
+    private string sceneName;
     void Start()
     {
+        Scene currentScene = SceneManager.GetActiveScene();
+        sceneName = currentScene.name;
         spawnInterval = 3.5f;
     }
     void Update()
@@ -19,6 +23,10 @@ public class InstantiateNyrkki : MonoBehaviour
         {
             int rnd = Random.Range(1, 5);
             time = time - spawnInterval;
+            if (sceneName == "NyrkkiEndless" && spawnInterval > 0.5f)
+            {
+                spawnInterval -= 0.05f;
+            }
             switch(rnd)
             {
                 case 1:

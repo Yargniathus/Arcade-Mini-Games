@@ -52,7 +52,7 @@ public class EndScriptNyrkki : MonoBehaviour
 
     private void RightRepHandler(object sender, RightRepEventArgs e)
     {
-        SceneManager.LoadScene("NyrkkiMain");
+        SceneManager.LoadScene(PlayerPrefs.GetString("PreviousModeNyrkki"));
     }
 
     private void OnDestroy()

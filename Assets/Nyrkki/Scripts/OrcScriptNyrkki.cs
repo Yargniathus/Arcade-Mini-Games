@@ -29,7 +29,7 @@ public class OrcScriptNyrkki : MonoBehaviour
         if (this.gameObject.GetComponent<Transform>().position.y >= 2)
         {
             reachedTop = true;
-            if (sceneName == "NyrkkiUncensored")
+            if (sceneName == "NyrkkiUncensored"|| sceneName == "NyrkkiEndless")
             {
                 StartCoroutine(JumpingStartCoroutine());
             }
@@ -41,12 +41,12 @@ public class OrcScriptNyrkki : MonoBehaviour
             this.gameObject.GetComponent<BoxCollider2D>().enabled = true;
         }
         ClimbingUp();
-        if (sceneName == "NyrkkiUncensored")
+        if (sceneName == "NyrkkiUncensored" || sceneName == "NyrkkiEndless")
         {
             JumpingAtPlayer();
             JumpDownFromLadder();
         }
-        if (sceneName == "NyrkkiMain" || sceneName == "NyrkkiEndless")
+        if (sceneName == "NyrkkiMain" )
         {
             ClimbingDown();
         }
@@ -76,10 +76,7 @@ public class OrcScriptNyrkki : MonoBehaviour
                     int points = PlayerPrefs.GetInt("NyrkkiPoints") - 100;
                     PlayerPrefs.SetInt("NyrkkiPoints", points);
                 }
-                if (sceneName == "NyrkkiEndless")
-                {
-                    HitsPlayer();
-                }
+               
                 Destroy(gameObject);
             }
         }

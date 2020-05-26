@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class TimerNyrkki : MonoBehaviour
 {  
 
-    public float Timer = 0f;
+    public static float Timer = 0f;
     public float TimeToGUI = 0f;
     private GameObject timeText = null;
     string sceneName;
@@ -23,13 +23,13 @@ public class TimerNyrkki : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Timer += Time.deltaTime;
         if (sceneName == "NyrkkiEndless")
         {
             this.timeText.GetComponent<Text>().text = "Score: " + PlayerPrefs.GetInt("NyrkkiPoints");
         }
         else
         {
-            Timer += Time.deltaTime;
             TimeToGUI = 40 - Timer;
             this.timeText.GetComponent<Text>().text = "Time: " + this.TimeToGUI.ToString("0");
             if (TimeToGUI <= 0)
