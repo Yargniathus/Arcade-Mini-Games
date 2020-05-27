@@ -44,6 +44,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menus/MenuNyrkkiMode.unity
     guid: 54195e7359cd25b428124b05640b0b3f
+  - enabled: 1
+    path: Assets/Scenes/Labyrintti/LabyrinttiLevel2.unity
+    guid: ba0f531ffc3516a409ef1efea17464e6
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 6fe447872a99eb643acaf4386d2f161d,
       type: 2}

@@ -41,7 +41,7 @@ public class EndScriptLabyrintti : MonoBehaviour
 
     private void RightRepHandler(object sender, RightRepEventArgs e)
     {
-        SceneManager.LoadScene("LabyrinttiRandomLevel");
+        SceneManager.LoadScene(PlayerPrefs.GetString("LabyrinttiMode"));
     }
 
     private void OnDestroy()

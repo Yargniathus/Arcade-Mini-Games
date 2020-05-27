@@ -6,28 +6,25 @@ using UnityEngine.SceneManagement;
 using Xamk.GymApi;
 using System.Threading;
 
-public class MainMenuScript : MonoBehaviour
+public class MenuLabyrinttiMode : MonoBehaviour
 {
     private CancellationTokenSource cancelTokenSource;
     private GymMachineListener gymMachineListener;
     private int chosenMenuOption;
     private int maxMenuOption;
-    Outline game1;
-    Outline game2;
-    Outline game3;
-    Image background1;
-    Image background2;
-    Image background3;
-    Image background4;
-    Outline credits;
+    Outline mode1;
+    Outline mode2;
+    Outline mode3;
+    Text mode1Instruction;
+    Text mode2Instruction;
+    Text mode3Instruction;
     private bool isTimerRunnig = false;
     private float combinedPullTimeDelay = 0.350f;
     private float targetTime = 0f;
     private bool isLeftRep = false;
     private bool isRightRep = false;
     private bool confirmingSelection = false;
-
-
+    // Start is called before the first frame update
     void Start()
     {
         cancelTokenSource = new CancellationTokenSource();
@@ -36,17 +33,13 @@ public class MainMenuScript : MonoBehaviour
         gymMachineListener.RightRepHandler += RightRepHandler;
         gymMachineListener.StartListener(cancelTokenSource.Token);
         chosenMenuOption = 0;
-        maxMenuOption = 3;
-        game1 = GameObject.Find("Game1").GetComponent<Outline>();
-        game2 = GameObject.Find("Game2").GetComponent<Outline>();
-        game3 = GameObject.Find("Game3").GetComponent<Outline>();
-        background1 = GameObject.Find("Background1").GetComponent<Image>();
-        background2 = GameObject.Find("Background2").GetComponent<Image>();
-        background3 = GameObject.Find("Background3").GetComponent<Image>();
-        background4 = GameObject.Find("Background4").GetComponent<Image>();
-
-        credits = GameObject.Find("Credits").GetComponent<Outline>();
-
+        maxMenuOption = 2;
+        mode1 = GameObject.Find("Mode1").GetComponent<Outline>();
+        mode2 = GameObject.Find("Mode2").GetComponent<Outline>();
+        mode3 = GameObject.Find("Mode3").GetComponent<Outline>();
+        mode1Instruction = GameObject.Find("EasyText").GetComponent<Text>();
+        mode2Instruction = GameObject.Find("HardText").GetComponent<Text>();
+        mode3Instruction = GameObject.Find("EndlessText").GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -64,69 +57,50 @@ public class MainMenuScript : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.DownArrow) || confirmingSelection)
         {
-            if (game1.enabled == true)
+            if (mode1.enabled == true)
             {
-                SceneManager.LoadScene("HyppyYlosMain");
+                PlayerPrefs.SetString("LabyrinttiMode", "LabyrinttiLevel1");
+                SceneManager.LoadScene("LabyrinttiLevel1");
             }
-            else if (game2.enabled == true)
+            else if (mode2.enabled == true)
             {
-                PlayerPrefs.SetInt("LabyrinttiLevel", 1);
-                SceneManager.LoadScene("MenuLabyrinttiMode");
+                PlayerPrefs.SetString("LabyrinttiMode", "LabyrinttiLevel2");
+                SceneManager.LoadScene("LabyrinttiLevel2");
             }
-            else if(game3.enabled == true)
+            else if (mode3.enabled == true)
             {
-                SceneManager.LoadScene("MenuNyrkkiMode");
+                PlayerPrefs.SetString("LabyrinttiMode", "LabyrinttiRandomLevel");
+                SceneManager.LoadScene("LabyrinttiRandomLevel");
             }
-            else if (credits.enabled == true)
-            {
-                //Not implemented yet
-                //SceneManager.LoadScene("Credits");
-            }
+
         }
-       
+
         switch (chosenMenuOption)
         {
             case 0:
-                game1.enabled = true;
-                game2.enabled = false;
-                game3.enabled = false;
-                background1.enabled = true;
-                background2.enabled = false;
-                background3.enabled = false;
-                background4.enabled = false;
-                credits.enabled = false;
+                mode1.enabled = true;
+                mode1Instruction.enabled = true;
+                mode2.enabled = false;
+                mode2Instruction.enabled = false;
+                mode3.enabled = false;
+                mode3Instruction.enabled = false;
                 break;
             case 1:
-                game1.enabled = false;
-                game2.enabled = true;
-                game3.enabled = false;
-                background1.enabled = false;
-                background2.enabled = true;
-                background3.enabled = false;
-                background4.enabled = false;
-                credits.enabled = false;
+                mode1.enabled = false;
+                mode1Instruction.enabled = false;
+                mode2.enabled = true;
+                mode2Instruction.enabled = true;
+                mode3.enabled = false;
+                mode3Instruction.enabled = false;
                 break;
             case 2:
-                game1.enabled = false;
-                game2.enabled = false;
-                game3.enabled = true;
-                background1.enabled = false;
-                background2.enabled = false;
-                background3.enabled = true;
-                background4.enabled = false;
-                credits.enabled = false;
+                mode1.enabled = false;
+                mode1Instruction.enabled = false;
+                mode2.enabled = false;
+                mode2Instruction.enabled = false;
+                mode3.enabled = true;
+                mode3Instruction.enabled = true;
                 break;
-            case 3:
-                game1.enabled = false;
-                game2.enabled = false;
-                game3.enabled = false;
-                background1.enabled =false;
-                background2.enabled = false;
-                background3.enabled = false;
-                background4.enabled = true;
-                credits.enabled = true;
-                break;
-
         }
         HandleRepetitionLogic();
     }
@@ -154,7 +128,7 @@ public class MainMenuScript : MonoBehaviour
             targetTime += Time.deltaTime;
 
             if (targetTime >= combinedPullTimeDelay)
-            {       
+            {
                 isTimerRunnig = false;
                 targetTime = 0;
             }
@@ -184,9 +158,9 @@ public class MainMenuScript : MonoBehaviour
         }
         isLeftRep = false;
 
-}
-IEnumerator RightDelay()
-{
+    }
+    IEnumerator RightDelay()
+    {
 
         yield return new WaitForSeconds(combinedPullTimeDelay);
         if (!isLeftRep)
