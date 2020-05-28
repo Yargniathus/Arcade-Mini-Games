@@ -29,7 +29,7 @@ public class MenuNyrkkiModeScript : MonoBehaviour
     void Start()
     {
         cancelTokenSource = new CancellationTokenSource();
-        gymMachineListener = new GymMachineListener(HurObject.Machine.OptimalRhomb);
+        gymMachineListener = new GymMachineListener((HurObject.Machine)PlayerPrefs.GetInt("SelectedMachine"));
         gymMachineListener.LeftRepHandler += LeftRepHandler;
         gymMachineListener.RightRepHandler += RightRepHandler;
         gymMachineListener.StartListener(cancelTokenSource.Token);
@@ -60,6 +60,8 @@ public class MenuNyrkkiModeScript : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.DownArrow) || confirmingSelection)
         {
+            if (gymMachineListener != null) cancelTokenSource.Cancel();
+
             if (mode1.enabled == true)
             {
                 SceneManager.LoadScene("NyrkkiMain");

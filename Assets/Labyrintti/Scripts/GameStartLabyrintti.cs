@@ -21,7 +21,7 @@ public class GameStartLabyrintti : MonoBehaviour
         this.instructions = GameObject.Find("Instructions");
         this.instructionScreen = GameObject.Find("InstructionScreen");
         cancelTokenSource = new CancellationTokenSource();
-        gymMachineListener = new GymMachineListener(HurObject.Machine.OptimalRhomb);
+        gymMachineListener = new GymMachineListener((HurObject.Machine)PlayerPrefs.GetInt("SelectedMachine"));
         gymMachineListener.LeftRepHandler += LeftRepHandler;
         gymMachineListener.RightRepHandler += RightRepHandler;
         gymMachineListener.StartListener(cancelTokenSource.Token);

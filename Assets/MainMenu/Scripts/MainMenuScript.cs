@@ -31,7 +31,7 @@ public class MainMenuScript : MonoBehaviour
     void Start()
     {
         cancelTokenSource = new CancellationTokenSource();
-        gymMachineListener = new GymMachineListener(HurObject.Machine.OptimalRhomb);
+        gymMachineListener = new GymMachineListener(HurObject.Machine.BicepsTriceps);
         gymMachineListener.LeftRepHandler += LeftRepHandler;
         gymMachineListener.RightRepHandler += RightRepHandler;
         gymMachineListener.StartListener(cancelTokenSource.Token);
@@ -66,15 +66,20 @@ public class MainMenuScript : MonoBehaviour
         {
             if (game1.enabled == true)
             {
+                SceneManager.UnloadSceneAsync("MainMenu");
                 SceneManager.LoadScene("HyppyYlosMain");
+
             }
             else if (game2.enabled == true)
             {
                 PlayerPrefs.SetInt("LabyrinttiLevel", 1);
+                if (gymMachineListener != null) cancelTokenSource.Cancel();
+                // SceneManager.UnloadSceneAsync("MainMenu");
                 SceneManager.LoadScene("MenuLabyrinttiMode");
             }
             else if(game3.enabled == true)
             {
+                SceneManager.UnloadSceneAsync("MainMenu");
                 SceneManager.LoadScene("MenuNyrkkiMode");
             }
             else if (credits.enabled == true)
@@ -184,8 +189,8 @@ public class MainMenuScript : MonoBehaviour
         isLeftRep = false;
 
 }
-IEnumerator RightDelay()
-{
+    IEnumerator RightDelay()
+    {
 
         yield return new WaitForSeconds(combinedPullTimeDelay);
         if (!isLeftRep)

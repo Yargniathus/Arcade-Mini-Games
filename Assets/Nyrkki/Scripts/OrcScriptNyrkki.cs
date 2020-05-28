@@ -19,7 +19,6 @@ public class OrcScriptNyrkki : MonoBehaviour
         orcAnimator.SetBool("OrcAnimatorIsClimbing", true);
         Scene currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
-        
     }
 
     // Update is called once per frame

@@ -28,7 +28,8 @@ public class MenuLabyrinttiMode : MonoBehaviour
     void Start()
     {
         cancelTokenSource = new CancellationTokenSource();
-        gymMachineListener = new GymMachineListener(HurObject.Machine.OptimalRhomb);
+        
+        gymMachineListener = new GymMachineListener((HurObject.Machine)PlayerPrefs.GetInt("SelectedMachine"));
         gymMachineListener.LeftRepHandler += LeftRepHandler;
         gymMachineListener.RightRepHandler += RightRepHandler;
         gymMachineListener.StartListener(cancelTokenSource.Token);
@@ -57,22 +58,22 @@ public class MenuLabyrinttiMode : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.DownArrow) || confirmingSelection)
         {
+            string level = "";
+
             if (mode1.enabled == true)
             {
-                PlayerPrefs.SetString("LabyrinttiMode", "LabyrinttiLevel1");
-                SceneManager.LoadScene("LabyrinttiLevel1");
+                level = "LabyrinttiLevel1";
             }
             else if (mode2.enabled == true)
             {
-                PlayerPrefs.SetString("LabyrinttiMode", "LabyrinttiLevel2");
-                SceneManager.LoadScene("LabyrinttiLevel2");
+                level = "LabyrinttiLevel2";
             }
             else if (mode3.enabled == true)
             {
-                PlayerPrefs.SetString("LabyrinttiMode", "LabyrinttiRandomLevel");
-                SceneManager.LoadScene("LabyrinttiRandomLevel");
+                level = "LabyrinttiRandomLevel";
             }
 
+            LoadLabyrinttiLevel(level);
         }
 
         switch (chosenMenuOption)
@@ -104,14 +105,21 @@ public class MenuLabyrinttiMode : MonoBehaviour
         }
         HandleRepetitionLogic();
     }
+
+    private void LoadLabyrinttiLevel(string level)
+    {
+        if (gymMachineListener != null)
+            cancelTokenSource.Cancel();
+
+        PlayerPrefs.SetString("LabyrinttiMode", level);
+        SceneManager.LoadScene(level);
+    }
+
     private void LeftRepHandler(object sender, LeftRepEventArgs e)
     {
         isTimerRunnig = true;
         isLeftRep = true;
         StartCoroutine(LeftDelay());
-
-
-
     }
 
     private void RightRepHandler(object sender, RightRepEventArgs e)

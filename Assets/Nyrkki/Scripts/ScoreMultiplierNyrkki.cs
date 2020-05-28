@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -27,15 +28,12 @@ public class ScoreMultiplierNyrkki : MonoBehaviour
         {
             this.multiplierText.GetComponent<Text>().text = "Multiplier: " + ScoreMultiplier;
         }
-        if (KillCounter>9 && KillCounter<25)
+
+        if (KillCounter > 0 && Math.Abs((KillCounter / 5f) % 1f) == 0)
         {
-            ScoreMultiplier = 1.5f;
+            ScoreMultiplier = 1f + (KillCounter / 5f);
         }
-        else if(KillCounter>24)
-        {
-            ScoreMultiplier = 2.5f;
-        }
-        else
+        else if(KillCounter < 5)
         {
             ScoreMultiplier = 1;
         }
