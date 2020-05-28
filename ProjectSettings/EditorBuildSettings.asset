@@ -50,6 +50,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menus/MenuLabyrinttiMode.unity
     guid: c25d15b0e904ce24f847c1ddda8b759b
+  - enabled: 1
+    path: Assets/Scenes/Menus/Credits.unity
+    guid: aea3dd85c8f242742ba6846cbb653e49
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 6fe447872a99eb643acaf4386d2f161d,
       type: 2}

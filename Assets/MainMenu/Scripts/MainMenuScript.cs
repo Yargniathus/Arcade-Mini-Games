@@ -79,8 +79,7 @@ public class MainMenuScript : MonoBehaviour
             }
             else if (credits.enabled == true)
             {
-                //Not implemented yet
-                //SceneManager.LoadScene("Credits");
+                SceneManager.LoadScene("Credits");
             }
         }
        
