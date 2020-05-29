@@ -3,12 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Xamk.GymApi;
+using System.Threading;
 
 public class EndScore : MonoBehaviour
 {
+    private CancellationTokenSource cancelTokenSource;
+    private GymMachineListener gymMachineListener;
     // Start is called before the first frame update
     void Start()
     {
+        cancelTokenSource = new CancellationTokenSource();
+        gymMachineListener = new GymMachineListener(HurObject.Machine.OptimalRhomb);
+        gymMachineListener.LeftRepHandler += LeftRepHandler;
+        gymMachineListener.RightRepHandler += RightRepHandler;
+        gymMachineListener.StartListener(cancelTokenSource.Token);
         float endScore = PlayerPrefs.GetFloat("points");
         string endReasonOfDeath = PlayerPrefs.GetString("reasonOfDeath");
         float highScore = PlayerPrefs.GetFloat("highscore");
@@ -29,11 +38,27 @@ public class EndScore : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            SceneManager.LoadScene("MainMenu");
+            gymMachineListener.SimulateLeftRep(1, 20, 500);
+          
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            SceneManager.LoadScene("HyppyYlosMain");
+            gymMachineListener.SimulateRightRep(1, 20, 500);
+          
         }
+    }
+    private void LeftRepHandler(object sender, LeftRepEventArgs e)
+    {
+
+        SceneManager.LoadScene("MainMenu");
+    }
+    private void RightRepHandler(object sender, RightRepEventArgs e)
+    {
+        SceneManager.LoadScene("HyppyYlosMain");
+    }
+
+    private void OnDestroy()
+    {
+        if (gymMachineListener != null) cancelTokenSource.Cancel();
     }
 }

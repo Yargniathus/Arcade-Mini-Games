@@ -21,7 +21,7 @@ public class PlatformInstantiate : MonoBehaviour
         {
             
             //
-
+            juuriSpawnattuLaskuri = 0;
 
             if (PlatformBoolValue.LastChosenLeftPlatform == true)
             {
@@ -37,7 +37,7 @@ public class PlatformInstantiate : MonoBehaviour
                 
             }
 
-            juuriSpawnattuLaskuri = 0;
+
 
         }
         if (transform.position.y > 15)
